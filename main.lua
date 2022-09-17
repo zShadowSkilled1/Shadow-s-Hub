@@ -1575,7 +1575,7 @@ end)
     bMiscTab:AddButton({
         Name = "UnLoad AimBot (Will Reboot The Game)",
         Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/zShadowSkilled1/Shadow-s-Hub-Ressources/main/Reboot.lua", true))()
+            loadstring(game:HttpGet("https://github.com/zShadowSkilled1/Shadow-s-Hub-Ressources/blob/main/Reboot.lua", true))()
             OrionLib:Destroy()
           end    
     })
