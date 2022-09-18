@@ -903,7 +903,7 @@ local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid;
 
 else
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "Shadow's Hub | MultiGames", HidePremium = false, SaveConfig = true, ConfigFolder = "configs"})
+    local Window = OrionLib:MakeWindow({Name = "Shadow's Hub | MultiGames", HidePremium = false, SaveConfig = true, ConfigFolder = "configs", IntroText = "Shadow's Hub", IntroEnabled = true})
     
     OrionLib:MakeNotification({
         Name = "Shadow's Hub",
@@ -1586,6 +1586,15 @@ end)
             loadstring(game:HttpGet("https://raw.githubusercontent.com/zShadowSkilled1/Shadow-s-Hub-Ressources/main/AntiKick%20%5C%20Ban.lua", true))()
         end
     })
+
+    bMiscTab:AddButton({
+        Name = "UnLoad Shadow's Hub",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/zShadowSkilled1/Shadow-s-Hub-Ressources/main/UnloaderAlert.lua", true))()
+            OrionLib:Destroy()
+        end
+    })
+    
 
 
     end
