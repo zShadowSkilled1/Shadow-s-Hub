@@ -11,7 +11,6 @@ local TextButton_2 = Instance.new("TextButton")
 local UIGradient = Instance.new("UIGradient")
 local TextLabel = Instance.new("TextLabel")
 local TextLabel_2 = Instance.new("TextLabel")
-local Alert = Instance.new("TextLabel")
 
 --Properties:
 
@@ -64,7 +63,7 @@ TextButton_2.TextScaled = true
 TextButton_2.TextSize = 1.000
 TextButton_2.TextWrapped = true
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(150, 30, 255)), ColorSequenceKeypoint.new(0.99, Color3.fromRGB(107, 117, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 20, 255))}
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(134, 47, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 20, 255))}
 UIGradient.Parent = GUI1
 
 TextLabel.Parent = Frame
@@ -90,22 +89,9 @@ TextLabel_2.TextScaled = true
 TextLabel_2.TextSize = 14.000
 TextLabel_2.TextWrapped = true
 
-Alert.Name = "Alert"
-Alert.Parent = Frame
-Alert.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Alert.BackgroundTransparency = 1.000
-Alert.Position = UDim2.new(0.000774485292, 0, 0.309027791, 0)
-Alert.Size = UDim2.new(0, 563, 0, 39)
-Alert.Font = Enum.Font.FredokaOne
-Alert.Text = "Using Shadow's Hub Is Bannabled, Its At Your Own Risks !"
-Alert.TextColor3 = Color3.fromRGB(255, 0, 0)
-Alert.TextScaled = true
-Alert.TextSize = 14.000
-Alert.TextWrapped = true
-
 -- Scripts:
 
-local function FOYE_fake_script() -- TextButton.LocalScript 
+local function FMMNLX_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:connect(function()
@@ -113,16 +99,16 @@ local function FOYE_fake_script() -- TextButton.LocalScript
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/zShadowSkilled1/Shadow-s-Hub/main/main.lua", true))()
 	 end)
 end
-coroutine.wrap(FOYE_fake_script)()
-local function KWEQ_fake_script() -- TextButton_2.LocalScript 
+coroutine.wrap(FMMNLX_fake_script)()
+local function UYCVL_fake_script() -- TextButton_2.LocalScript 
 	local script = Instance.new('LocalScript', TextButton_2)
 
 	script.Parent.MouseButton1Click:connect(function()
 		script.Parent.Parent.Parent.Parent.Parent.GUI:Destroy()
 	 end)
 end
-coroutine.wrap(KWEQ_fake_script)()
-local function XBNVGJS_fake_script() -- Frame.LocalScript 
+coroutine.wrap(UYCVL_fake_script)()
+local function DDNAHCV_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	
@@ -161,4 +147,4 @@ local function XBNVGJS_fake_script() -- Frame.LocalScript
 		end
 	end)
 end
-coroutine.wrap(XBNVGJS_fake_script)()
+coroutine.wrap(DDNAHCV_fake_script)()
