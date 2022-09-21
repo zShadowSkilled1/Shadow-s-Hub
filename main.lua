@@ -926,7 +926,7 @@ _G.aimBot = false
 _G.aimAmmount = "90"
 _G.infJump1 = true
 _G.antiAFK = true
-_G.FullBrightEnabled = false
+_G.FullBrightEnabled = true
 local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid
 local Humanoid1 = game.Players.LocalPlayer.Character.Humanoid
 local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
@@ -1477,14 +1477,14 @@ end)
         end)
     
         game:GetService("Lighting"):GetPropertyChangedSignal("Ambient"):Connect(function()
-            if game:GetService("Lighting").Ambient ~= Color3.fromRGB(178, 178, 178) and game:GetService("Lighting").Ambient ~= _G.NormalLightingSettings.Ambient then
+            if game:GetService("Lighting").Ambient ~= Color3.fromRGB(255, 255, 255) and game:GetService("Lighting").Ambient ~= _G.NormalLightingSettings.Ambient then
                 _G.NormalLightingSettings.Ambient = game:GetService("Lighting").Ambient
                 if not _G.FullBrightEnabled then
                     repeat
                         wait()
                     until _G.FullBrightEnabled
                 end
-                game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
+                game:GetService("Lighting").Ambient = Color3.fromRGB(255, 255, 255)
             end
         end)
     
@@ -1492,7 +1492,7 @@ end)
         game:GetService("Lighting").ClockTime = 12
         game:GetService("Lighting").FogEnd = 786543
         game:GetService("Lighting").GlobalShadows = false
-        game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
+        game:GetService("Lighting").Ambient = Color3.fromRGB(255, 255, 255)
     
         local LatestValue = true
         spawn(function()
@@ -1512,7 +1512,7 @@ end)
                         game:GetService("Lighting").ClockTime = 12
                         game:GetService("Lighting").FogEnd = 786543
                         game:GetService("Lighting").GlobalShadows = false
-                        game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
+                        game:GetService("Lighting").Ambient = Color3.fromRGB(255, 255, 255)
                     end
                     LatestValue = not LatestValue
                 end
@@ -1688,6 +1688,7 @@ end)
     bMiscTab:AddButton({
         Name = "Load AimBot (Press RightClick)",
         Callback = function()
+            _G.aimBotEnabled = Value
                   aimBotV1()
           end    
     })
