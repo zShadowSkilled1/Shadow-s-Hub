@@ -927,6 +927,17 @@ _G.aimAmmount = "90"
 _G.infJump1 = true
 _G.antiAFK = true
 _G.FullBrightEnabled = true
+_G.AimbotEnabled = true
+_G.TeamCheck = false -- If set to true then the script would only lock your aim at enemy team members.
+_G.AimPart = "Head" -- Where the aimbot script would lock at.
+_G.Sensitivity = 0 -- How many seconds it takes for the aimbot script to officially lock onto the target's aimpart.
+_G.CircleSides = 64 -- How many sides the FOV circle would have.
+_G.CircleColor = Color3.fromRGB(255, 255, 255) -- (RGB) Color that the FOV circle would appear as.
+_G.CircleTransparency = 0.7 -- Transparency of the circle.
+_G.CircleRadius = 180 -- The radius of the circle / FOV.
+_G.CircleFilled = false -- Determines whether or not the circle is filled.
+_G.CircleVisible = true -- Determines whether or not the circle is visible.
+_G.CircleThickness = 0 -- The thickness of the circle.
 local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid
 local Humanoid1 = game.Players.LocalPlayer.Character.Humanoid
 local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
@@ -934,6 +945,13 @@ local p2 = "PLAYER"
 local pos = p1.CFrame
 local mt = getrawmetatable(game)
 local oldmt = mt.index
+local Camera = workspace.CurrentCamera
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local LocalPlayer = Players.LocalPlayer
+local Holding = false
 
     --Functions
 
@@ -999,377 +1017,85 @@ local oldmt = mt.index
    end
 
    function aimBotV1()
---while _G.aimBot == true do
---if _G.aimBot == true then
-    --// Preventing Multiple Processes
-
-pcall(function()
-    getgenv().Aimbot.Functions:Exit()
-end)
-
---// Environment
-
-getgenv().Aimbot = {}
-local Environment = getgenv().Aimbot
-
---// Services
-
-local RunService = game:GetService("RunService")
-local UserInputService = game:GetService("UserInputService")
-local HttpService = game:GetService("HttpService")
-local TweenService = game:GetService("TweenService")
-local StarterGui = game:GetService("StarterGui")
-local Players = game:GetService("Players")
-local Camera = game:GetService("Workspace").CurrentCamera
-
---// Variables
-
-local LocalPlayer = Players.LocalPlayer
-local Title = "AimBot"
-local FileNames = {"Aimbot", "Configuration.json", "Drawing.json"}
-local RequiredDistance = math.huge
-local Typing = false
-local Running = false
-local Animation = nil
-local ServiceConnections = {RenderSteppedConnection = nil, InputBeganConnection = nil, InputEndedConnection = nil, TypingStartedConnection = nil, TypingEndedConnection = nil}
-
---// Script Settings
-
-Environment.Settings = {
-    SendNotifications = false,
-    SaveSettings = true, -- Re-execute upon changing
-    ReloadOnTeleport = true,
-    Enabled = true,
-    TeamCheck = true,
-    AliveCheck = true,
-    WallCheck = false, -- Laggy
-    Sensitivity = 0, -- Animation length (in seconds) before fully locking onto target
-    TriggerKey = "MouseButton2",
-    Toggle = false,
-    LockPart = "Head" -- Body part to lock on
-}
-
-Environment.FOVSettings = {
-    Enabled = true,
-    Visible = true,
-    Amount = 150,
-    Color = "255, 255, 255",
-    LockedColor = "255, 70, 70",
-    Transparency = 0.5,
-    Sides = 60,
-    Thickness = 1,
-    Filled = false
-}
-
-Environment.FOVCircle = Drawing.new("Circle")
-Environment.Locked = nil
-
---// Core Functions
-
-local function Encode(Table)
-    if Table and type(Table) == "table" then
-        local EncodedTable = HttpService:JSONEncode(Table)
-
-        return EncodedTable
-    end
-end
-
-local function Decode(String)
-    if String and type(String) == "string" then
-        local DecodedTable = HttpService:JSONDecode(String)
-
-        return DecodedTable
-    end
-end
-
-local function GetColor(Color)
-    local R = tonumber(string.match(Color, "([%d]+)[%s]*,[%s]*[%d]+[%s]*,[%s]*[%d]+"))
-    local G = tonumber(string.match(Color, "[%d]+[%s]*,[%s]*([%d]+)[%s]*,[%s]*[%d]+"))
-    local B = tonumber(string.match(Color, "[%d]+[%s]*,[%s]*[%d]+[%s]*,[%s]*([%d]+)"))
-
-    return Color3.fromRGB(R, G, B)
-end
-
-local function SendNotification(TitleArg, DescriptionArg, DurationArg)
-    if Environment.Settings.SendNotifications then
-        StarterGui:SetCore("SendNotification", {
-            Title = TitleArg,
-            Text = DescriptionArg,
-            Duration = DurationArg
-        })
-    end
-end
-
---// Functions
-
-local function SaveSettings()
-    if Environment.Settings.SaveSettings then
-        if isfile(Title.."/"..FileNames[1].."/"..FileNames[2]) then
-            writefile(Title.."/"..FileNames[1].."/"..FileNames[2], Encode(Environment.Settings))
-        end
-
-        if isfile(Title.."/"..FileNames[1].."/"..FileNames[3]) then
-            writefile(Title.."/"..FileNames[1].."/"..FileNames[3], Encode(Environment.FOVSettings))
-        end
-    end
-end
-
-local function GetClosestPlayer()
-    if Environment.Locked == nil then
-        if Environment.FOVSettings.Enabled then
-            RequiredDistance = Environment.FOVSettings.Amount
-        else
-            RequiredDistance = math.huge
-        end
-
+    local FOVCircle = Drawing.new("Circle")
+    FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
+    FOVCircle.Radius = _G.CircleRadius
+    FOVCircle.Filled = _G.CircleFilled
+    FOVCircle.Color = _G.CircleColor
+    FOVCircle.Visible = _G.CircleVisible
+    FOVCircle.Radius = _G.CircleRadius
+    FOVCircle.Transparency = _G.CircleTransparency
+    FOVCircle.NumSides = _G.CircleSides
+    FOVCircle.Thickness = _G.CircleThickness
+    
+    local function GetClosestPlayer()
+        local MaximumDistance = _G.CircleRadius
+        local Target = nil
+    
         for _, v in next, Players:GetPlayers() do
-            if v ~= LocalPlayer then
-                if v.Character and v.Character[Environment.Settings.LockPart] then
-                    if Environment.Settings.TeamCheck and v.Team == LocalPlayer.Team then end
-                    if Environment.Settings.AliveCheck and v.Character.Humanoid.Health <= 0 then end
-                    if Environment.Settings.WallCheck and #(Camera:GetPartsObscuringTarget({v.Character[Environment.Settings.LockPart].Position}, v.Character:GetDescendants())) > 0 then end
-
-                    local Vector, OnScreen = Camera:WorldToViewportPoint(v.Character[Environment.Settings.LockPart].Position)
-                    local Distance = (Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y) - Vector2.new(Vector.X, Vector.Y)).Magnitude
-
-                    if Distance < RequiredDistance and OnScreen then
-                        RequiredDistance = Distance
-                        Environment.Locked = v
+            if v.Name ~= LocalPlayer.Name then
+                if _G.TeamCheck == true then
+                    if v.Team ~= LocalPlayer.Team then
+                        if v.Character ~= nil then
+                            if v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
+                                if v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("Humanoid").Health ~= 0 then
+                                    local ScreenPoint = Camera:WorldToScreenPoint(v.Character:WaitForChild("HumanoidRootPart", math.huge).Position)
+                                    local VectorDistance = (Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y) - Vector2.new(ScreenPoint.X, ScreenPoint.Y)).Magnitude
+                                    
+                                    if VectorDistance < MaximumDistance then
+                                        Target = v
+                                    end
+                                end
+                            end
+                        end
+                    end
+                else
+                    if v.Character ~= nil then
+                        if v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
+                            if v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("Humanoid").Health ~= 0 then
+                                local ScreenPoint = Camera:WorldToScreenPoint(v.Character:WaitForChild("HumanoidRootPart", math.huge).Position)
+                                local VectorDistance = (Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y) - Vector2.new(ScreenPoint.X, ScreenPoint.Y)).Magnitude
+                                
+                                if VectorDistance < MaximumDistance then
+                                    Target = v
+                                end
+                            end
+                        end
                     end
                 end
             end
         end
-    elseif (Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y) - Vector2.new(Camera:WorldToViewportPoint(Environment.Locked.Character[Environment.Settings.LockPart].Position).X, Camera:WorldToViewportPoint(Environment.Locked.Character[Environment.Settings.LockPart].Position).Y)).Magnitude > RequiredDistance then
-        Environment.Locked = nil
-        Animation:Cancel()
-        Environment.FOVCircle.Color = GetColor(Environment.FOVSettings.Color)
+    
+        return Target
     end
-end
-
---// Typing Check
-
-ServiceConnections.TypingStartedConnection = UserInputService.TextBoxFocused:Connect(function()
-    Typing = true
-end)
-
-ServiceConnections.TypingEndedConnection = UserInputService.TextBoxFocusReleased:Connect(function()
-    Typing = false
-end)
-
---// Create, Save & Load Settings
-
-if Environment.Settings.SaveSettings then
-    if not isfolder(Title) then
-        makefolder(Title)
-    end
-
-    if not isfolder(Title.."/"..FileNames[1]) then
-        makefolder(Title.."/"..FileNames[1])
-    end
-
-    if not isfile(Title.."/"..FileNames[1].."/"..FileNames[2]) then
-        writefile(Title.."/"..FileNames[1].."/"..FileNames[2], Encode(Environment.Settings))
-    else
-        Environment.Settings = Decode(readfile(Title.."/"..FileNames[1].."/"..FileNames[2]))
-    end
-
-    if not isfile(Title.."/"..FileNames[1].."/"..FileNames[3]) then
-        writefile(Title.."/"..FileNames[1].."/"..FileNames[3], Encode(Environment.FOVSettings))
-    else
-        Environment.Visuals = Decode(readfile(Title.."/"..FileNames[1].."/"..FileNames[3]))
-    end
-
-    coroutine.wrap(function()
-        while wait(10) do
-            SaveSettings()
-        end
-    end)()
-else
-    if isfolder(Title) then
-        delfolder(Title)
-    end
-end
-
-local function Load()
-    ServiceConnections.RenderSteppedConnection = RunService.RenderStepped:Connect(function()
-        if Environment.FOVSettings.Enabled and Environment.Settings.Enabled then
-            Environment.FOVCircle.Radius = Environment.FOVSettings.Amount
-            Environment.FOVCircle.Thickness = Environment.FOVSettings.Thickness
-            Environment.FOVCircle.Filled = Environment.FOVSettings.Filled
-            Environment.FOVCircle.NumSides = Environment.FOVSettings.Sides
-            Environment.FOVCircle.Color = GetColor(Environment.FOVSettings.Color)
-            Environment.FOVCircle.Transparency = Environment.FOVSettings.Transparency
-            Environment.FOVCircle.Visible = Environment.FOVSettings.Visible
-            Environment.FOVCircle.Position = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
-        else
-            Environment.FOVCircle.Visible = false
-        end
-
-        if Running and Environment.Settings.Enabled then
-            GetClosestPlayer()
-
-            if Environment.Settings.Sensitivity > 0 then
-                Animation = TweenService:Create(Camera, TweenInfo.new(Environment.Settings.Sensitivity, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(Camera.CFrame.Position, Environment.Locked.Character[Environment.Settings.LockPart].Position)})
-                Animation:Play()
-            else
-                Camera.CFrame = CFrame.new(Camera.CFrame.Position, Environment.Locked.Character[Environment.Settings.LockPart].Position)
-            end
-
-            Environment.FOVCircle.Color = GetColor(Environment.FOVSettings.LockedColor)
+    
+    UserInputService.InputBegan:Connect(function(Input)
+        if Input.UserInputType == Enum.UserInputType.MouseButton2 then
+            Holding = true
         end
     end)
-
-    ServiceConnections.InputBeganConnection = UserInputService.InputBegan:Connect(function(Input)
-        if not Typing then
-            pcall(function()
-                if Input.KeyCode == Enum.KeyCode[Environment.Settings.TriggerKey] then
-                    if Environment.Settings.Toggle then
-                        Running = not Running
-
-                        if not Running then
-                            Environment.Locked = nil
-                            Animation:Cancel()
-                            Environment.FOVCircle.Color = GetColor(Environment.FOVSettings.Color)
-                        end
-                    else
-                        Running = true
-                    end
-                end
-            end)
-
-            pcall(function()
-                if Input.UserInputType == Enum.UserInputType[Environment.Settings.TriggerKey] then
-                    if Environment.Settings.Toggle then
-                        Running = not Running
-
-                        if not Running then
-                            Environment.Locked = nil
-                            Animation:Cancel()
-                            Environment.FOVCircle.Color = GetColor(Environment.FOVSettings.Color)
-                        end
-                    else
-                        Running = true
-                    end
-                end
-            end)
+    
+    UserInputService.InputEnded:Connect(function(Input)
+        if Input.UserInputType == Enum.UserInputType.MouseButton2 then
+            Holding = false
         end
     end)
-
-    ServiceConnections.InputEndedConnection = UserInputService.InputEnded:Connect(function(Input)
-        if not Typing then
-            pcall(function()
-                if Input.KeyCode == Enum.KeyCode[Environment.Settings.TriggerKey] then
-                    if not Environment.Settings.Toggle then
-                        Running = false
-                        Environment.Locked = nil
-                        Animation:Cancel()
-                        Environment.FOVCircle.Color = GetColor(Environment.FOVSettings.Color)
-                    end
-                end
-            end)
-
-            pcall(function()
-                if Input.UserInputType == Enum.UserInputType[Environment.Settings.TriggerKey] then
-                    if not Environment.Settings.Toggle then
-                        Running = false
-                        Environment.Locked = nil
-                        Animation:Cancel()
-                        Environment.FOVCircle.Color = GetColor(Environment.FOVSettings.Color)
-                    end
-                end
-            end)
+    
+    RunService.RenderStepped:Connect(function()
+        FOVCircle.Position = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
+        FOVCircle.Radius = _G.CircleRadius
+        FOVCircle.Filled = _G.CircleFilled
+        FOVCircle.Color = _G.CircleColor
+        FOVCircle.Visible = _G.CircleVisible
+        FOVCircle.Radius = _G.CircleRadius
+        FOVCircle.Transparency = _G.CircleTransparency
+        FOVCircle.NumSides = _G.CircleSides
+        FOVCircle.Thickness = _G.CircleThickness
+    
+        if Holding == true and _G.AimbotEnabled == true then
+            TweenService:Create(Camera, TweenInfo.new(_G.Sensitivity, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(Camera.CFrame.Position, GetClosestPlayer().Character[_G.AimPart].Position)}):Play()
         end
     end)
-end
-
---// Functions
-
-Environment.Functions = {}
-
-function Environment.Functions:Exit()
-    SaveSettings()
-
-    for _, v in next, ServiceConnections do
-        v:Disconnect()
-    end
-
-    Environment.FOVCircle:Remove()
-
-    getgenv().Aimbot.Functions = nil
-    getgenv().Aimbot = nil
-end
-
-function Environment.Functions:Restart()
-    SaveSettings()
-
-    for _, v in next, ServiceConnections do
-        v:Disconnect()
-    end
-
-    Environment.FOVCircle:Remove()
-
-    Load()
-end
-
-function Environment.Functions:ResetSettings()
-    Environment.Settings = {
-        SendNotifications = true,
-        SaveSettings = true, -- Re-execute upon changing
-        ReloadOnTeleport = true,
-        Enabled = true,
-        TeamCheck = false,
-        AliveCheck = true,
-        WallCheck = false,
-        Sensitivity = 0, -- Animation length (in seconds) before fully locking onto target
-        TriggerKey = "MouseButton2",
-        Toggle = false,
-        LockPart = "Head" -- Body part to lock on
-    }
-
-    Environment.FOVSettings = {
-        Enabled = true,
-        Visible = true,
-        Amount = 150,
-        Color = "255, 255, 255",
-        LockedColor = "255, 70, 70",
-        Transparency = 0.5,
-        Sides = 60,
-        Thickness = 1,
-        Filled = false
-    }
-
-    SaveSettings()
-
-    for _, v in next, ServiceConnections do
-        v:Disconnect()
-    end
-
-    Load()
-end
-
---// Support Check
-
-if not Drawing or not writefile or not makefolder then
-    SendNotification(Title, "Your exploit does not support this script", 3); return
-end
-
---// Reload On Teleport
-
-if Environment.Settings.ReloadOnTeleport then
-    local queueonteleport = queue_on_teleport or syn.queue_on_teleport
-
-    if queueonteleport then
-        queueonteleport(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V2/main/Resources/Scripts/Main.lua"))
-    else
-        SendNotification(Title, "Your exploit does not support \"syn.queue_on_teleport()\"")
-    end
-end
-
---// Load
-
-Load(); SendNotification(Title, "Aimbot script successfully loaded! Check the GitHub page on how to configure the script.", 5)
---elseif _G.aimBot == false then
-    --print("AimBot Disabled.")
    end
 
    function infJump()
@@ -1538,32 +1264,38 @@ end)
 
     local bMovementsTab = Window:MakeTab({
         Name = "Movements",
-        Icon = "rbxassetid://279461710",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+    local bCombatTab = Window:MakeTab({
+        Name = "Combat",
+        Icon = "rbxassetid://4483345998",
         PremiumOnly = false
     })
 
     local bRenderTab = Window:MakeTab({
         Name = "Render",
-        Icon = "rbxassetid://279461710",
+        Icon = "rbxassetid://4483345998",
         PremiumOnly = false
     })
 
 
     local bUtilityTab = Window:MakeTab({
         Name = "Utility",
-        Icon = "rbxassetid://279461710",
+        Icon = "rbxassetid://4483345998",
         PremiumOnly = false
     })
 
     local bMiscTab = Window:MakeTab({
         Name = "Misc",
-        Icon = "rbxassetid://279461710",
+        Icon = "rbxassetid://4483345998",
         PremiumOnly = false
     })
 
     local bHubTab = Window:MakeTab({
         Name = "Settings",
-        Icon = "rbxassetid://279461710",
+        Icon = "rbxassetid://4483345998",
         PremiumOnly = false
     })
 
@@ -1635,6 +1367,32 @@ end)
         end    
     })
 
+    bCombatTab:AddToggle({
+        Name = "AimAssist",
+        Default = false,
+        Callback = function(Value)
+            _G.AimbotEnabled = Value
+            _G.CircleVisible = Value
+            aimBotV1()
+        end    
+    })
+
+    bCombatTab:AddToggle({
+        Name = "AimAssist FOV Visible",
+        Default = false,
+        Callback = function(Value)
+            _G.CircleVisible = Value
+        end    
+    })
+
+    bCombatTab:AddToggle({
+        Name = "AimAssist TeamCheck",
+        Default = false,
+        Callback = function(Value)
+            _G.TeamCheck = Value
+        end    
+    })
+
     bRenderTab:AddToggle({
         Name = "FullBright",
         Default = false,
@@ -1675,6 +1433,7 @@ end)
 
     bMiscTab:AddParagraph("WARNING!","If you click on the UnLoad AimBot button, it will rejoin the current game and you will need to Re-Execute Shadow's Hub!")
 
+
     bMiscTab:AddTextbox({
         Name = "Teleport To Player :",
         Default = "PLAYER",
@@ -1683,24 +1442,6 @@ end)
             p2 = Value
             tpToPlr()
         end	  
-    })
-
-    bMiscTab:AddButton({
-        Name = "Load AimBot (Press RightClick)",
-        Callback = function()
-            _G.aimBotEnabled = Value
-                  aimBotV1()
-          end    
-    })
-
-
-
-    bMiscTab:AddButton({
-        Name = "UnLoad AimBot (Will Reboot The Game)",
-        Callback = function()
-            loadstring(game:HttpGet("https://github.com/zShadowSkilled1/Shadow-s-Hub-Ressources/blob/main/Reboot.lua", true))()
-            OrionLib:Destroy()
-          end    
     })
 
     bMiscTab:AddButton({
