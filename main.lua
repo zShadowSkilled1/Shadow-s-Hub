@@ -970,8 +970,9 @@ _G.LineColor = Color3.fromRGB(255, 80, 10)   -- The color that the boxes would a
 _G.LineThickness = 1   -- The thickness of the boxes.
 _G.LineTransparency = 0.7   -- The transparency of the boxes.
 _G.SizeIncrease = 1   -- How much the box's size is increased (The size is multiplied by the value of this variable). (1 is default, anything more then 2 is not recommended) <float> / <int>
-    
-    _G.DisableKey = Enum.KeyCode.Q   -- The key that disables / enables the boxes.
+--_G.DisableKey = Enum.KeyCode.Q   -- The key that disables / enables the boxes.
+_G.acBypassEnabled = false
+_G.speedHack = false
 local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid
 local Humanoid1 = game.Players.LocalPlayer.Character.Humanoid
 local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
@@ -990,27 +991,17 @@ local Holding = false
     --Functions
 
     function walkSpeed()
+        while _G.speedHack == true do
         Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
-            if _G.WS == "17" then
-                OrionLib:MakeNotification({
-                    Name = "WARNING !",
-                    Content = "ANTICHEATS CAN DETECT THE SPEED HACKS.",
-                    Image = "rbxassetid://4483345998",
-                    Time = 5
-                })
-            end
             Humanoid.WalkSpeed = _G.WS
             end)
-            if _G.WS == "17" then
-                OrionLib:MakeNotification({
-                    Name = "WARNING !",
-                    Content = "ANTICHEATS CAN DETECT THE SPEED HACKS.",
-                    Image = "rbxassetid://4483345998",
-                    Time = 5
-                })
-            end
             Humanoid.WalkSpeed = _G.WS
-    end
+            wait(0.01)
+end
+if _G.speedHack == false then
+    Humanoid.WalkSpeed = 16
+end
+end
 
     function jumpPower()
         Humanoid:GetPropertyChangedSignal("JumpPower"):Connect(function()
@@ -2022,8 +2013,6 @@ end)
    end
 
 
-
-
     --Tabs
 
 
@@ -2099,6 +2088,15 @@ end)
         end	  
     })
 
+    bMovementsTab:AddToggle({
+        Name = "Speed Hacks",
+        Default = false,
+        Callback = function(Value)
+            _G.speedHack = Value
+            walkSpeed()
+        end    
+    })
+
     local JumpSlider = bMovementsTab:AddSlider({
         Name = "Jump Power",
         Min = 0,
@@ -2130,6 +2128,15 @@ end)
         Callback = function(Value)
             _G.infJump1 = Value
             infJump()
+        end    
+    })
+
+    bMovementsTab:AddToggle({
+        Name = "Bypass AntiCheats",
+        Default = false,
+        Callback = function(Value)
+            _G.acBypassSpeedEnabled = Value
+            walkSpeed()
         end    
     })
 
