@@ -6,24 +6,42 @@
 local SHCL = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
-local ScrollingFrame = Instance.new("ScrollingFrame")
-local FBButton = Instance.new("TextButton")
+local Line1 = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
+local SettingsButton = Instance.new("ImageButton")
+local ImageLabel = Instance.new("ImageLabel")
+local WebsiteButton = Instance.new("ImageButton")
+local ScrollingFrame = Instance.new("ScrollingFrame")
 local TracersButton = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
 local ESPBoxesButton = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
 local AimAssistButton = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
-local SettingsButton = Instance.new("ImageButton")
-local SettingsFrame = Instance.new("Frame")
+local InfJumpButton = Instance.new("TextButton")
 local UICorner_6 = Instance.new("UICorner")
-local BlurButton = Instance.new("TextButton")
+local FBButton = Instance.new("TextButton")
 local UICorner_7 = Instance.new("UICorner")
-local NotifFrame = Instance.new("Frame")
+local CloseRoblox = Instance.new("TextButton")
 local UICorner_8 = Instance.new("UICorner")
+local SettingsFrame = Instance.new("Frame")
+local UICorner_9 = Instance.new("UICorner")
+local BlurButton = Instance.new("TextButton")
+local UICorner_10 = Instance.new("UICorner")
+local Line1_2 = Instance.new("Frame")
+local UICorner_11 = Instance.new("UICorner")
+local ImageLabel_2 = Instance.new("ImageLabel")
+local WebsiteButton_2 = Instance.new("ImageButton")
+local NotifFrame = Instance.new("Frame")
+local UICorner_12 = Instance.new("UICorner")
 local Title = Instance.new("TextLabel")
 local Description = Instance.new("TextLabel")
+local WarningFrame = Instance.new("Frame")
+local UICorner_13 = Instance.new("UICorner")
+local Title_2 = Instance.new("TextLabel")
+local Description_2 = Instance.new("TextLabel")
+local Yes = Instance.new("TextButton")
+local No = Instance.new("TextButton")
 local Blur = Instance.new("BlurEffect")
 
 --Properties:
@@ -31,42 +49,60 @@ local Blur = Instance.new("BlurEffect")
 SHCL.Name = "SHCL"
 SHCL.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 SHCL.ResetOnSpawn = false
-Blur.Parent = SHCL
 
 Frame.Parent = SHCL
 Frame.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
-Frame.Position = UDim2.new(0.00919540226, 0, 0.00961538497, 0)
-Frame.Size = UDim2.new(0, 204, 0, 512)
+Frame.Position = UDim2.new(0.0076616616, 0, 0.0096153859, 0)
+Frame.Size = UDim2.new(0, 204, 0, 526)
 Frame.Visible = false
 
 UICorner.Parent = Frame
+
+Line1.Name = "Line1"
+Line1.Parent = Frame
+Line1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Line1.Position = UDim2.new(0.00490199821, 0, -0.0005573628, 0)
+Line1.Size = UDim2.new(0, 203, 0, 40)
+
+UICorner_2.Parent = Line1
+
+SettingsButton.Name = "Settings Button"
+SettingsButton.Parent = Line1
+SettingsButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SettingsButton.BackgroundTransparency = 1.000
+SettingsButton.Position = UDim2.new(0.837414324, 0, 0.200000003, 0)
+SettingsButton.Size = UDim2.new(0, 26, 0, 24)
+SettingsButton.Image = "rbxassetid://7059346373"
+
+ImageLabel.Parent = Line1
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Position = UDim2.new(0, 0, 0.199999958, 0)
+ImageLabel.Size = UDim2.new(0, 66, 0, 25)
+ImageLabel.Image = "rbxassetid://11082090111"
+
+WebsiteButton.Name = "WebsiteButton"
+WebsiteButton.Parent = Line1
+WebsiteButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WebsiteButton.BackgroundTransparency = 1.000
+WebsiteButton.Position = UDim2.new(0.69458133, 0, 0.157329321, 0)
+WebsiteButton.Size = UDim2.new(0, 28, 0, 28)
+WebsiteButton.Image = "rbxassetid://1091572755"
 
 ScrollingFrame.Parent = Frame
 ScrollingFrame.Active = true
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
 ScrollingFrame.BorderSizePixel = 0
-ScrollingFrame.Position = UDim2.new(0.00919540226, 0, 0.020833334, 0)
-ScrollingFrame.Size = UDim2.new(0, 196, 0, 497)
-
-FBButton.Name = "FBButton"
-FBButton.Parent = ScrollingFrame
-FBButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-FBButton.BorderSizePixel = 0
-FBButton.Position = UDim2.new(0.0918367356, 0, 0.044921875, 0)
-FBButton.Size = UDim2.new(0, 160, 0, 26)
-FBButton.Font = Enum.Font.Gotham
-FBButton.Text = "FullBright"
-FBButton.TextColor3 = Color3.fromRGB(177, 177, 177)
-FBButton.TextSize = 19.000
-FBButton.TextWrapped = true
-
-UICorner_2.Parent = FBButton
+ScrollingFrame.Position = UDim2.new(0.00919540226, 0, 0.0759664327, 0)
+ScrollingFrame.Size = UDim2.new(0, 196, 0, 468)
+ScrollingFrame.HorizontalScrollBarInset = Enum.ScrollBarInset.ScrollBar
+ScrollingFrame.VerticalScrollBarInset = Enum.ScrollBarInset.Always
 
 TracersButton.Name = "TracersButton"
 TracersButton.Parent = ScrollingFrame
 TracersButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TracersButton.BorderSizePixel = 0
-TracersButton.Position = UDim2.new(0.0918367356, 0, 0.0869140625, 0)
+TracersButton.Position = UDim2.new(0.0918367356, 0, 0.0517429598, 0)
 TracersButton.Size = UDim2.new(0, 160, 0, 26)
 TracersButton.Font = Enum.Font.Gotham
 TracersButton.Text = "Tracers"
@@ -80,7 +116,7 @@ ESPBoxesButton.Name = "ESPBoxesButton"
 ESPBoxesButton.Parent = ScrollingFrame
 ESPBoxesButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ESPBoxesButton.BorderSizePixel = 0
-ESPBoxesButton.Position = UDim2.new(0.0918367356, 0, 0.127929688, 0)
+ESPBoxesButton.Position = UDim2.new(0.0918367356, 0, 0.092758581, 0)
 ESPBoxesButton.Size = UDim2.new(0, 160, 0, 26)
 ESPBoxesButton.Font = Enum.Font.Gotham
 ESPBoxesButton.Text = "ESP Boxes"
@@ -94,7 +130,7 @@ AimAssistButton.Name = "AimAssistButton"
 AimAssistButton.Parent = ScrollingFrame
 AimAssistButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 AimAssistButton.BorderSizePixel = 0
-AimAssistButton.Position = UDim2.new(0.0918367356, 0, 0.169921875, 0)
+AimAssistButton.Position = UDim2.new(0.0918367356, 0, 0.134750769, 0)
 AimAssistButton.Size = UDim2.new(0, 160, 0, 26)
 AimAssistButton.Font = Enum.Font.Gotham
 AimAssistButton.Text = "AimAssist"
@@ -104,29 +140,63 @@ AimAssistButton.TextWrapped = true
 
 UICorner_5.Parent = AimAssistButton
 
-SettingsButton.Name = "Settings Button"
-SettingsButton.Parent = Frame
-SettingsButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SettingsButton.BackgroundTransparency = 1.000
-SettingsButton.Position = UDim2.new(0.00490200752, 0, 0, 0)
-SettingsButton.Size = UDim2.new(0, 26, 0, 24)
-SettingsButton.Image = "rbxassetid://7059346373"
+InfJumpButton.Name = "InfJumpButton"
+InfJumpButton.Parent = ScrollingFrame
+InfJumpButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+InfJumpButton.BorderSizePixel = 0
+InfJumpButton.Position = UDim2.new(0.0918367356, 0, 0.176742956, 0)
+InfJumpButton.Size = UDim2.new(0, 160, 0, 26)
+InfJumpButton.Font = Enum.Font.Gotham
+InfJumpButton.Text = "Infinite Jump"
+InfJumpButton.TextColor3 = Color3.fromRGB(177, 177, 177)
+InfJumpButton.TextSize = 19.000
+InfJumpButton.TextWrapped = true
+
+UICorner_6.Parent = InfJumpButton
+
+FBButton.Name = "FBButton"
+FBButton.Parent = ScrollingFrame
+FBButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FBButton.BorderSizePixel = 0
+FBButton.Position = UDim2.new(0.0918367356, 0, 0.00975077227, 0)
+FBButton.Size = UDim2.new(0, 160, 0, 26)
+FBButton.Font = Enum.Font.Gotham
+FBButton.Text = "FullBright"
+FBButton.TextColor3 = Color3.fromRGB(177, 177, 177)
+FBButton.TextSize = 19.000
+FBButton.TextWrapped = true
+
+UICorner_7.Parent = FBButton
+
+CloseRoblox.Name = "CloseRoblox"
+CloseRoblox.Parent = ScrollingFrame
+CloseRoblox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseRoblox.BorderSizePixel = 0
+CloseRoblox.Position = UDim2.new(0.096938774, 0, 0.216666907, 0)
+CloseRoblox.Size = UDim2.new(0, 160, 0, 26)
+CloseRoblox.Font = Enum.Font.Gotham
+CloseRoblox.Text = "Close Roblox"
+CloseRoblox.TextColor3 = Color3.fromRGB(177, 177, 177)
+CloseRoblox.TextSize = 19.000
+CloseRoblox.TextWrapped = true
+
+UICorner_8.Parent = CloseRoblox
 
 SettingsFrame.Name = "SettingsFrame"
 SettingsFrame.Parent = SHCL
 SettingsFrame.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
 SettingsFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)
 SettingsFrame.Position = UDim2.new(0.170881227, 0, 0.00961538497, 0)
-SettingsFrame.Size = UDim2.new(0, 182, 0, 512)
+SettingsFrame.Size = UDim2.new(0, 204, 0, 526)
 SettingsFrame.Visible = false
 
-UICorner_6.Parent = SettingsFrame
+UICorner_9.Parent = SettingsFrame
 
 BlurButton.Name = "BlurButton"
 BlurButton.Parent = SettingsFrame
 BlurButton.BackgroundColor3 = Color3.fromRGB(109, 255, 99)
 BlurButton.BorderSizePixel = 0
-BlurButton.Position = UDim2.new(0.0588697009, 0, 0.109375, 0)
+BlurButton.Position = UDim2.new(0.102987349, 0, 0.0941658765, 0)
 BlurButton.Size = UDim2.new(0, 160, 0, 26)
 BlurButton.Font = Enum.Font.Gotham
 BlurButton.Text = "BackGround Blur"
@@ -134,7 +204,30 @@ BlurButton.TextColor3 = Color3.fromRGB(177, 177, 177)
 BlurButton.TextSize = 19.000
 BlurButton.TextWrapped = true
 
-UICorner_7.Parent = BlurButton
+UICorner_10.Parent = BlurButton
+
+Line1_2.Name = "Line1"
+Line1_2.Parent = SettingsFrame
+Line1_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Line1_2.Position = UDim2.new(0.00490199821, 0, -0.0005573628, 0)
+Line1_2.Size = UDim2.new(0, 203, 0, 40)
+
+UICorner_11.Parent = Line1_2
+
+ImageLabel_2.Parent = Line1_2
+ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.BackgroundTransparency = 1.000
+ImageLabel_2.Position = UDim2.new(0, 0, 0.199999958, 0)
+ImageLabel_2.Size = UDim2.new(0, 66, 0, 25)
+ImageLabel_2.Image = "rbxassetid://11082090111"
+
+WebsiteButton_2.Name = "WebsiteButton"
+WebsiteButton_2.Parent = Line1_2
+WebsiteButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WebsiteButton_2.BackgroundTransparency = 1.000
+WebsiteButton_2.Position = UDim2.new(0.827586234, 0, 0.182329327, 0)
+WebsiteButton_2.Size = UDim2.new(0, 28, 0, 28)
+WebsiteButton_2.Image = "rbxassetid://1091572755"
 
 NotifFrame.Name = "NotifFrame"
 NotifFrame.Parent = SHCL
@@ -143,7 +236,7 @@ NotifFrame.Position = UDim2.new(0.792337179, 0, 0.854166687, 0)
 NotifFrame.Size = UDim2.new(0, 254, 0, 73)
 NotifFrame.Visible = false
 
-UICorner_8.Parent = NotifFrame
+UICorner_12.Parent = NotifFrame
 
 Title.Name = "Title"
 Title.Parent = NotifFrame
@@ -169,144 +262,191 @@ Description.TextColor3 = Color3.fromRGB(153, 153, 153)
 Description.TextSize = 13.000
 Description.TextWrapped = true
 
+WarningFrame.Name = "WarningFrame"
+WarningFrame.Parent = SHCL
+WarningFrame.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+WarningFrame.Position = UDim2.new(0.313565612, 0, 0.216346145, 0)
+WarningFrame.Size = UDim2.new(0, 503, 0, 311)
+WarningFrame.Visible = false
+
+UICorner_13.Parent = WarningFrame
+
+Title_2.Name = "Title"
+Title_2.Parent = WarningFrame
+Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.BackgroundTransparency = 1.000
+Title_2.Size = UDim2.new(0, 503, 0, 44)
+Title_2.Font = Enum.Font.Gotham
+Title_2.Text = "Shadow's Hub"
+Title_2.TextColor3 = Color3.fromRGB(97, 97, 97)
+Title_2.TextScaled = true
+Title_2.TextSize = 51.000
+Title_2.TextWrapped = true
+
+Description_2.Name = "Description"
+Description_2.Parent = WarningFrame
+Description_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Description_2.BackgroundTransparency = 1.000
+Description_2.Position = UDim2.new(0, 0, 0.167202577, 0)
+Description_2.Size = UDim2.new(0, 503, 0, 188)
+Description_2.Font = Enum.Font.Gotham
+Description_2.Text = "WARNING : CLOSING ROBLOX WILL INSTANTALLY CLOSE YOUR CURRENT INSTANCE. ARE YOU SURE ?"
+Description_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+Description_2.TextSize = 34.000
+Description_2.TextWrapped = true
+
+Yes.Name = "Yes"
+Yes.Parent = WarningFrame
+Yes.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Yes.BackgroundTransparency = 1.000
+Yes.Position = UDim2.new(0.161033809, 0, 0.810289383, 0)
+Yes.Size = UDim2.new(0, 124, 0, 43)
+Yes.Font = Enum.Font.Gotham
+Yes.Text = "Yes"
+Yes.TextColor3 = Color3.fromRGB(255, 0, 0)
+Yes.TextScaled = true
+Yes.TextSize = 14.000
+Yes.TextWrapped = true
+
+No.Name = "No"
+No.Parent = WarningFrame
+No.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+No.BackgroundTransparency = 1.000
+No.Position = UDim2.new(0.576540768, 0, 0.810289383, 0)
+No.Size = UDim2.new(0, 124, 0, 43)
+No.Font = Enum.Font.Gotham
+No.Text = "No"
+No.TextColor3 = Color3.fromRGB(105, 255, 127)
+No.TextScaled = true
+No.TextSize = 14.000
+No.TextWrapped = true
+
+Blur.Parent = SHCL
+Blur.Size = 15
+Blur.Enabled = true
+
 -- Scripts:
 
-local function ANHQUD_fake_script() -- FBButton.Example 
-	local script = Instance.new('LocalScript', FBButton)
+local function XXTPEXY_fake_script() -- Frame.Keybind Script 
+	local script = Instance.new('LocalScript', Frame)
 
-	--[[script.Parent.MouseButton1Click:connect(function()
-		if script.Parent.Parent.Parent.CharacterFrame.Visible == false then
-			script.Parent.Parent.Parent.CharacterFrame.Visible = true
-		else
-			script.Parent.Parent.Parent.CharacterFrame.Visible = false
-		end
-	end)--]]
-end
-coroutine.wrap(ANHQUD_fake_script)()
-local function OYKCPE_fake_script() -- FBButton.Script 
-	local script = Instance.new('LocalScript', FBButton)
-
-	_G.FullBrightEnabled = false
+	local frame = script.Parent.Parent.Frame -- Make this you frame Name!
+	local frame2 = script.Parent.Parent.SettingsFrame
+	local hotkey = Enum.KeyCode.RightShift -- Make this whatever you want your keybind to be! 
 	
-	function Fullbright()
-		if _G.FullBrightEnabled == true then
+	local UIS = game:GetService("UserInputService")
+	local open = false
 	
-	
-			_G.NormalLightingSettings = {
-				Brightness = game:GetService("Lighting").Brightness,
-				ClockTime = game:GetService("Lighting").ClockTime,
-				FogEnd = game:GetService("Lighting").FogEnd,
-				GlobalShadows = game:GetService("Lighting").GlobalShadows,
-				Ambient = game:GetService("Lighting").Ambient
-			}
-	
-			game:GetService("Lighting"):GetPropertyChangedSignal("Brightness"):Connect(function()
-				if game:GetService("Lighting").Brightness ~= 1 and game:GetService("Lighting").Brightness ~= _G.NormalLightingSettings.Brightness then
-					_G.NormalLightingSettings.Brightness = game:GetService("Lighting").Brightness
-					if not _G.FullBrightEnabled then
-						repeat
-							wait()
-						until _G.FullBrightEnabled
-					end
-					game:GetService("Lighting").Brightness = 1
-				end
-			end)
-	
-			game:GetService("Lighting"):GetPropertyChangedSignal("ClockTime"):Connect(function()
-				if game:GetService("Lighting").ClockTime ~= 12 and game:GetService("Lighting").ClockTime ~= _G.NormalLightingSettings.ClockTime then
-					_G.NormalLightingSettings.ClockTime = game:GetService("Lighting").ClockTime
-					if not _G.FullBrightEnabled then
-						repeat
-							wait()
-						until _G.FullBrightEnabled
-					end
-					game:GetService("Lighting").ClockTime = 12
-				end
-			end)
-	
-			game:GetService("Lighting"):GetPropertyChangedSignal("FogEnd"):Connect(function()
-				if game:GetService("Lighting").FogEnd ~= 786543 and game:GetService("Lighting").FogEnd ~= _G.NormalLightingSettings.FogEnd then
-					_G.NormalLightingSettings.FogEnd = game:GetService("Lighting").FogEnd
-					if not _G.FullBrightEnabled then
-						repeat
-							wait()
-						until _G.FullBrightEnabled
-					end
-					game:GetService("Lighting").FogEnd = 786543
-				end
-			end)
-	
-			game:GetService("Lighting"):GetPropertyChangedSignal("GlobalShadows"):Connect(function()
-				if game:GetService("Lighting").GlobalShadows ~= false and game:GetService("Lighting").GlobalShadows ~= _G.NormalLightingSettings.GlobalShadows then
-					_G.NormalLightingSettings.GlobalShadows = game:GetService("Lighting").GlobalShadows
-					if not _G.FullBrightEnabled then
-						repeat
-							wait()
-						until _G.FullBrightEnabled
-					end
-					game:GetService("Lighting").GlobalShadows = false
-				end
-			end)
-	
-			game:GetService("Lighting"):GetPropertyChangedSignal("Ambient"):Connect(function()
-				if game:GetService("Lighting").Ambient ~= Color3.fromRGB(255, 255, 255) and game:GetService("Lighting").Ambient ~= _G.NormalLightingSettings.Ambient then
-					_G.NormalLightingSettings.Ambient = game:GetService("Lighting").Ambient
-					if not _G.FullBrightEnabled then
-						repeat
-							wait()
-						until _G.FullBrightEnabled
-					end
-					game:GetService("Lighting").Ambient = Color3.fromRGB(255, 255, 255)
-				end
-			end)
-	
-			game:GetService("Lighting").Brightness = 1
-			game:GetService("Lighting").ClockTime = 12
-			game:GetService("Lighting").FogEnd = 786543
-			game:GetService("Lighting").GlobalShadows = false
-			game:GetService("Lighting").Ambient = Color3.fromRGB(255, 255, 255)
-	
-			local LatestValue = true
-			spawn(function()
-				repeat
-					wait()
-				until _G.FullBrightEnabled
-				while wait() do
-					if _G.FullBrightEnabled ~= LatestValue then
-						if not _G.FullBrightEnabled then
-							game:GetService("Lighting").Brightness = _G.NormalLightingSettings.Brightness
-							game:GetService("Lighting").ClockTime = _G.NormalLightingSettings.ClockTime
-							game:GetService("Lighting").FogEnd = _G.NormalLightingSettings.FogEnd
-							game:GetService("Lighting").GlobalShadows = _G.NormalLightingSettings.GlobalShadows
-							game:GetService("Lighting").Ambient = _G.NormalLightingSettings.Ambient
-						else
-							game:GetService("Lighting").Brightness = 1
-							game:GetService("Lighting").ClockTime = 12
-							game:GetService("Lighting").FogEnd = 786543
-							game:GetService("Lighting").GlobalShadows = false
-							game:GetService("Lighting").Ambient = Color3.fromRGB(255, 255, 255)
-						end
-						LatestValue = not LatestValue
+	if frame2.Visible == false then
+		frame2.Visible = false
+		UIS.InputBegan:Connect(function(key, gp)
+			if key.KeyCode == hotkey then
+				if UIS:GetFocusedTextBox() == nil then
+					if open == false then
+						open = true 
+						frame.Visible = open
+						frame2.Visible = false
+					elseif open == true then
+						open = false
+						frame.Visible = open
+						frame2.Visible = false
 					end
 				end
-			end)
-		end
-	
+			end
+		end)
+	elseif frame2.Visible == true then
+		UIS.InputBegan:Connect(function(key, gp)
+			if key.KeyCode == hotkey then
+				if UIS:GetFocusedTextBox() == nil then
+					if open == false then
+						open = true 
+						frame.Visible = open
+						frame2.Visible = open
+					elseif open == true then
+						open = false
+						frame.Visible = open
+						frame2.Visible = false
+					end
+				end
+			end
+		end)
 	end
 	
+end
+coroutine.wrap(XXTPEXY_fake_script)()
+local function BJEP_fake_script() -- Frame.Keybind Script2 
+	local script = Instance.new('LocalScript', Frame)
+
+	local frame = script.Parent.Parent.Blur -- Make this you frame Name!
+	local hotkey = Enum.KeyCode.RightShift -- Make this whatever you want your keybind to be! 
+	
+	local UIS = game:GetService("UserInputService")
+	local open = false
+	
+	
+	
+	UIS.InputBegan:Connect(function(key, gp)
+	 if key.KeyCode == hotkey then
+	  if UIS:GetFocusedTextBox() == nil then
+	   if open == false then
+	    open = true 
+	    frame.Parent = game.Lighting
+	   elseif open == true then
+	    open = false
+	    frame.Parent = script.Parent.Parent.Parent.SHCL
+	   end
+	  end
+	 end
+	end)
+	
+end
+coroutine.wrap(BJEP_fake_script)()
+local function BDJCNE_fake_script() -- SettingsButton.Script 
+	local script = Instance.new('LocalScript', SettingsButton)
+
 	script.Parent.MouseButton1Click:connect(function()
-		if _G.FullBrightEnabled == false then
-			_G.FullBrightEnabled = true
-			script.Parent.Parent.FBButton.BackgroundColor3 = Color3.new(0.427451, 1, 0.388235)
-			Fullbright()
-		elseif _G.FullBrightEnabled == true then
-			_G.FullBrightEnabled = false
-			script.Parent.Parent.FBButton.BackgroundColor3 = Color3.new(0, 0, 0)
+		if script.Parent.Parent.Parent.Parent.SettingsFrame.Visible == false then
+			script.Parent.Parent.Parent.Parent.SettingsFrame.Visible = true
+		else
+			script.Parent.Parent.Parent.Parent.SettingsFrame.Visible = false
 		end
 	end)
 end
-coroutine.wrap(OYKCPE_fake_script)()
-local function ABNAD_fake_script() -- TracersButton.Example 
+coroutine.wrap(BDJCNE_fake_script)()
+local function GSTLVB_fake_script() -- WebsiteButton.LocalScript 
+	local script = Instance.new('LocalScript', WebsiteButton)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.Parent.NotifFrame.Description.Text = "Copied The Shadow's Hub Client Website Link In Your ClipBoard."
+		script.Parent.Parent.Parent.Parent.NotifFrame.Visible = true
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 1
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.8
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.6
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.4
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.2
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0
+		wait(5)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.2
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.4
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.6
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.8
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 1
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Visible = false
+		setclipboard("https://shadowhub.xyz")
+	end)
+end
+coroutine.wrap(GSTLVB_fake_script)()
+local function TVSJJ_fake_script() -- TracersButton.Example 
 	local script = Instance.new('LocalScript', TracersButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -317,8 +457,8 @@ local function ABNAD_fake_script() -- TracersButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(ABNAD_fake_script)()
-local function SRGD_fake_script() -- TracersButton.Script 
+coroutine.wrap(TVSJJ_fake_script)()
+local function TOTBCJ_fake_script() -- TracersButton.Script 
 	local script = Instance.new('LocalScript', TracersButton)
 
 	_G.DefaultSettings = false   -- If set to true then the tracer script would run with default settings regardless of any changes you made.
@@ -570,8 +710,8 @@ local function SRGD_fake_script() -- TracersButton.Script
 		end
 	end)
 end
-coroutine.wrap(SRGD_fake_script)()
-local function HFQVKP_fake_script() -- ESPBoxesButton.Example 
+coroutine.wrap(TOTBCJ_fake_script)()
+local function TWYLNN_fake_script() -- ESPBoxesButton.Example 
 	local script = Instance.new('LocalScript', ESPBoxesButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -582,8 +722,8 @@ local function HFQVKP_fake_script() -- ESPBoxesButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(HFQVKP_fake_script)()
-local function NXGEZQN_fake_script() -- ESPBoxesButton.Script 
+coroutine.wrap(TWYLNN_fake_script)()
+local function XGKEY_fake_script() -- ESPBoxesButton.Script 
 	local script = Instance.new('LocalScript', ESPBoxesButton)
 
 	_G.SendNotifications = false   -- If set to true then the script would notify you frequently on any changes applied and when loaded / errored. (If a game can detect this, it is recommended to set it to false)
@@ -923,8 +1063,8 @@ local function NXGEZQN_fake_script() -- ESPBoxesButton.Script
 		end
 	end)
 end
-coroutine.wrap(NXGEZQN_fake_script)()
-local function CSUS_fake_script() -- AimAssistButton.Example 
+coroutine.wrap(XGKEY_fake_script)()
+local function FYFC_fake_script() -- AimAssistButton.Example 
 	local script = Instance.new('LocalScript', AimAssistButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -935,11 +1075,11 @@ local function CSUS_fake_script() -- AimAssistButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(CSUS_fake_script)()
-local function LPNL_fake_script() -- AimAssistButton.Script 
+coroutine.wrap(FYFC_fake_script)()
+local function AXZB_fake_script() -- AimAssistButton.Script 
 	local script = Instance.new('LocalScript', AimAssistButton)
 
-	_G.AimbotEnabled = true
+	_G.AimbotEnabled = false
 	_G.aimTeamCheck = false -- If set to true then the script would only lock your aim at enemy team members.
 	_G.AimPart = "Head" -- Where the aimbot script would lock at.
 	_G.Sensitivity = 0 -- How many seconds it takes for the aimbot script to officially lock onto the target's aimpart.
@@ -1054,8 +1194,245 @@ local function LPNL_fake_script() -- AimAssistButton.Script
 		end
 	end)
 end
-coroutine.wrap(LPNL_fake_script)()
-local function LLEYST_fake_script() -- Frame.DragScript 
+coroutine.wrap(AXZB_fake_script)()
+local function SEGDLHU_fake_script() -- InfJumpButton.Example 
+	local script = Instance.new('LocalScript', InfJumpButton)
+
+	--[[script.Parent.MouseButton1Click:connect(function()
+		if script.Parent.Parent.Parent.CharacterFrame.Visible == false then
+			script.Parent.Parent.Parent.CharacterFrame.Visible = true
+		else
+			script.Parent.Parent.Parent.CharacterFrame.Visible = false
+		end
+	end)--]]
+end
+coroutine.wrap(SEGDLHU_fake_script)()
+local function FMNP_fake_script() -- InfJumpButton.Script 
+	local script = Instance.new('LocalScript', InfJumpButton)
+
+	_G.infJump1 = false
+	
+	function infJump()
+		--// Services
+	
+	
+		local UserInputService = game:GetService("UserInputService")
+		local RunService = game:GetService("RunService")
+		local Players = game:GetService("Players")
+	
+		--// Variables
+	
+		--local Key = Enum.KeyCode.E
+		local Flying = false
+		local Typing = false
+	
+		--// Typing Check
+	
+		UserInputService.TextBoxFocused:Connect(function()
+			Typing = true
+		end)
+	
+		UserInputService.TextBoxFocusReleased:Connect(function()
+			Typing = false
+		end)
+	
+		--// Main
+	
+		RunService.RenderStepped:Connect(function()
+			if Flying then
+				Players.LocalPlayer.Character.Humanoid:ChangeState(4)
+				Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+			end
+		end)
+	
+		UserInputService.InputBegan:Connect(function(Input)
+			if _G.infJump1 == true then
+				Flying = not Flying
+				if not Flying then
+					Players.LocalPlayer.Character.Humanoid:ChangeState(8)
+					Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16 
+				end
+			end
+		end)
+	end
+	
+	script.Parent.MouseButton1Click:connect(function()
+		if _G.infJump1 == false then
+			_G.infJump1 = true
+			script.Parent.Parent.InfJumpButton.BackgroundColor3 = Color3.new(0.427451, 1, 0.388235)
+			infJump()
+		elseif _G.infJump1 == true then
+			_G.infJump1 = false
+			script.Parent.Parent.InfJumpButton.BackgroundColor3 = Color3.new(0, 0, 0)
+		end
+	end)
+end
+coroutine.wrap(FMNP_fake_script)()
+local function PGNN_fake_script() -- FBButton.Example 
+	local script = Instance.new('LocalScript', FBButton)
+
+	--[[script.Parent.MouseButton1Click:connect(function()
+		if script.Parent.Parent.Parent.CharacterFrame.Visible == false then
+			script.Parent.Parent.Parent.CharacterFrame.Visible = true
+		else
+			script.Parent.Parent.Parent.CharacterFrame.Visible = false
+		end
+	end)--]]
+end
+coroutine.wrap(PGNN_fake_script)()
+local function XTUMDDT_fake_script() -- FBButton.Script 
+	local script = Instance.new('LocalScript', FBButton)
+
+	_G.FullBrightEnabled = false
+	
+	function Fullbright()
+		if _G.FullBrightEnabled == true then
+	
+	
+			_G.NormalLightingSettings = {
+				Brightness = game:GetService("Lighting").Brightness,
+				ClockTime = game:GetService("Lighting").ClockTime,
+				FogEnd = game:GetService("Lighting").FogEnd,
+				GlobalShadows = game:GetService("Lighting").GlobalShadows,
+				Ambient = game:GetService("Lighting").Ambient
+			}
+	
+			game:GetService("Lighting"):GetPropertyChangedSignal("Brightness"):Connect(function()
+				if game:GetService("Lighting").Brightness ~= 1 and game:GetService("Lighting").Brightness ~= _G.NormalLightingSettings.Brightness then
+					_G.NormalLightingSettings.Brightness = game:GetService("Lighting").Brightness
+					if not _G.FullBrightEnabled then
+						repeat
+							wait()
+						until _G.FullBrightEnabled
+					end
+					game:GetService("Lighting").Brightness = 1
+				end
+			end)
+	
+			game:GetService("Lighting"):GetPropertyChangedSignal("ClockTime"):Connect(function()
+				if game:GetService("Lighting").ClockTime ~= 12 and game:GetService("Lighting").ClockTime ~= _G.NormalLightingSettings.ClockTime then
+					_G.NormalLightingSettings.ClockTime = game:GetService("Lighting").ClockTime
+					if not _G.FullBrightEnabled then
+						repeat
+							wait()
+						until _G.FullBrightEnabled
+					end
+					game:GetService("Lighting").ClockTime = 12
+				end
+			end)
+	
+			game:GetService("Lighting"):GetPropertyChangedSignal("FogEnd"):Connect(function()
+				if game:GetService("Lighting").FogEnd ~= 786543 and game:GetService("Lighting").FogEnd ~= _G.NormalLightingSettings.FogEnd then
+					_G.NormalLightingSettings.FogEnd = game:GetService("Lighting").FogEnd
+					if not _G.FullBrightEnabled then
+						repeat
+							wait()
+						until _G.FullBrightEnabled
+					end
+					game:GetService("Lighting").FogEnd = 786543
+				end
+			end)
+	
+			game:GetService("Lighting"):GetPropertyChangedSignal("GlobalShadows"):Connect(function()
+				if game:GetService("Lighting").GlobalShadows ~= false and game:GetService("Lighting").GlobalShadows ~= _G.NormalLightingSettings.GlobalShadows then
+					_G.NormalLightingSettings.GlobalShadows = game:GetService("Lighting").GlobalShadows
+					if not _G.FullBrightEnabled then
+						repeat
+							wait()
+						until _G.FullBrightEnabled
+					end
+					game:GetService("Lighting").GlobalShadows = false
+				end
+			end)
+	
+			game:GetService("Lighting"):GetPropertyChangedSignal("Ambient"):Connect(function()
+				if game:GetService("Lighting").Ambient ~= Color3.fromRGB(255, 255, 255) and game:GetService("Lighting").Ambient ~= _G.NormalLightingSettings.Ambient then
+					_G.NormalLightingSettings.Ambient = game:GetService("Lighting").Ambient
+					if not _G.FullBrightEnabled then
+						repeat
+							wait()
+						until _G.FullBrightEnabled
+					end
+					game:GetService("Lighting").Ambient = Color3.fromRGB(255, 255, 255)
+				end
+			end)
+	
+			game:GetService("Lighting").Brightness = 1
+			game:GetService("Lighting").ClockTime = 12
+			game:GetService("Lighting").FogEnd = 786543
+			game:GetService("Lighting").GlobalShadows = false
+			game:GetService("Lighting").Ambient = Color3.fromRGB(255, 255, 255)
+	
+			local LatestValue = true
+			spawn(function()
+				repeat
+					wait()
+				until _G.FullBrightEnabled
+				while wait() do
+					if _G.FullBrightEnabled ~= LatestValue then
+						if not _G.FullBrightEnabled then
+							game:GetService("Lighting").Brightness = _G.NormalLightingSettings.Brightness
+							game:GetService("Lighting").ClockTime = _G.NormalLightingSettings.ClockTime
+							game:GetService("Lighting").FogEnd = _G.NormalLightingSettings.FogEnd
+							game:GetService("Lighting").GlobalShadows = _G.NormalLightingSettings.GlobalShadows
+							game:GetService("Lighting").Ambient = _G.NormalLightingSettings.Ambient
+						else
+							game:GetService("Lighting").Brightness = 1
+							game:GetService("Lighting").ClockTime = 12
+							game:GetService("Lighting").FogEnd = 786543
+							game:GetService("Lighting").GlobalShadows = false
+							game:GetService("Lighting").Ambient = Color3.fromRGB(255, 255, 255)
+						end
+						LatestValue = not LatestValue
+					end
+				end
+			end)
+		end
+	
+	end
+	
+	script.Parent.MouseButton1Click:connect(function()
+		if _G.FullBrightEnabled == false then
+			_G.FullBrightEnabled = true
+			script.Parent.Parent.FBButton.BackgroundColor3 = Color3.new(0.427451, 1, 0.388235)
+			Fullbright()
+		elseif _G.FullBrightEnabled == true then
+			_G.FullBrightEnabled = false
+			script.Parent.Parent.FBButton.BackgroundColor3 = Color3.new(0, 0, 0)
+		end
+	end)
+end
+coroutine.wrap(XTUMDDT_fake_script)()
+local function FYNM_fake_script() -- CloseRoblox.Example 
+	local script = Instance.new('LocalScript', CloseRoblox)
+
+	--[[script.Parent.MouseButton1Click:connect(function()
+		if script.Parent.Parent.Parent.CharacterFrame.Visible == false then
+			script.Parent.Parent.Parent.CharacterFrame.Visible = true
+		else
+			script.Parent.Parent.Parent.CharacterFrame.Visible = false
+		end
+	end)--]]
+end
+coroutine.wrap(FYNM_fake_script)()
+local function NUOC_fake_script() -- CloseRoblox.Script 
+	local script = Instance.new('LocalScript', CloseRoblox)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.Parent.WarningFrame.Visible = true
+		script.Parent.Parent.Parent.Parent.WarningFrame.Transparency = 0.8
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.WarningFrame.Transparency = 0.6
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.WarningFrame.Transparency = 0.4
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.WarningFrame.Transparency = 0.2
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.WarningFrame.Transparency = 0
+	end)
+end
+coroutine.wrap(NUOC_fake_script)()
+local function OHBM_fake_script() -- Frame.DragScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
@@ -1098,94 +1475,8 @@ local function LLEYST_fake_script() -- Frame.DragScript
 	end)
 	
 end
-coroutine.wrap(LLEYST_fake_script)()
-local function QBXWYID_fake_script() -- Frame.Keybind Script 
-	local script = Instance.new('LocalScript', Frame)
-
-	local frame = script.Parent.Parent.Frame -- Make this you frame Name!
-	local frame2 = script.Parent.Parent.SettingsFrame
-	local hotkey = Enum.KeyCode.RightShift -- Make this whatever you want your keybind to be! 
-	
-	local UIS = game:GetService("UserInputService")
-	local open = false
-	
-	if frame2.Visible == false then
-		frame2.Visible = false
-		UIS.InputBegan:Connect(function(key, gp)
-			if key.KeyCode == hotkey then
-				if UIS:GetFocusedTextBox() == nil then
-					if open == false then
-						open = true 
-						frame.Visible = open
-						frame2.Visible = false
-					elseif open == true then
-						open = false
-						frame.Visible = open
-						frame2.Visible = false
-					end
-				end
-			end
-		end)
-	elseif frame2.Visible == true then
-		UIS.InputBegan:Connect(function(key, gp)
-			if key.KeyCode == hotkey then
-				if UIS:GetFocusedTextBox() == nil then
-					if open == false then
-						open = true 
-						frame.Visible = open
-						frame2.Visible = open
-					elseif open == true then
-						open = false
-						frame.Visible = open
-						frame2.Visible = false
-					end
-				end
-			end
-		end)
-	end
-	
-end
-coroutine.wrap(QBXWYID_fake_script)()
-local function NCBTBA_fake_script() -- Frame.Keybind Script2 
-	local script = Instance.new('LocalScript', Frame)
-
-	local frame = script.Parent.Parent.Blur -- Make this you frame Name!
-	local hotkey = Enum.KeyCode.RightShift -- Make this whatever you want your keybind to be! 
-	
-	local UIS = game:GetService("UserInputService")
-	local open = false
-	
-	
-	
-	UIS.InputBegan:Connect(function(key, gp)
-	 if key.KeyCode == hotkey then
-	  if UIS:GetFocusedTextBox() == nil then
-	   if open == false then
-	    open = true 
-	    frame.Parent = game.Lighting
-	   elseif open == true then
-	    open = false
-	    frame.Parent = script.Parent.Parent.Parent.SHCL
-	   end
-	  end
-	 end
-	end)
-	
-end
-coroutine.wrap(NCBTBA_fake_script)()
-local function HAND_fake_script() -- SettingsButton.Script 
-	local script = Instance.new('LocalScript', SettingsButton)
-
-	script.Parent.MouseButton1Click:connect(function()
-		if script.Parent.Parent.Parent.SettingsFrame.Visible == false then
-			script.Parent.Parent.Parent.SettingsFrame.Visible = true
-		else
-			script.Parent.Parent.Parent.SettingsFrame.Visible = false
-		end
-	end)
-end
-coroutine.wrap(HAND_fake_script)()
-local function LSZG_fake_script() -- SettingsFrame.DragScript 
+coroutine.wrap(OHBM_fake_script)()
+local function PRZPU_fake_script() -- SettingsFrame.DragScript 
 	local script = Instance.new('LocalScript', SettingsFrame)
 
 	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
@@ -1228,8 +1519,8 @@ local function LSZG_fake_script() -- SettingsFrame.DragScript
 	end)
 	
 end
-coroutine.wrap(LSZG_fake_script)()
-local function IKLWOKP_fake_script() -- BlurButton.Example 
+coroutine.wrap(PRZPU_fake_script)()
+local function QGPIUT_fake_script() -- BlurButton.Example 
 	local script = Instance.new('LocalScript', BlurButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1240,8 +1531,8 @@ local function IKLWOKP_fake_script() -- BlurButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(IKLWOKP_fake_script)()
-local function TSDMONB_fake_script() -- BlurButton.Script 
+coroutine.wrap(QGPIUT_fake_script)()
+local function MQXR_fake_script() -- BlurButton.Script 
 	local script = Instance.new('LocalScript', BlurButton)
 
 	_G.BackgroundBlur = true
@@ -1267,11 +1558,44 @@ local function TSDMONB_fake_script() -- BlurButton.Script
 		end
 	end)
 end
-coroutine.wrap(TSDMONB_fake_script)()
-local function QCCRINP_fake_script() -- SHCL.LoadedNotif 
+coroutine.wrap(MQXR_fake_script)()
+local function EDOSGZ_fake_script() -- WebsiteButton_2.LocalScript 
+	local script = Instance.new('LocalScript', WebsiteButton_2)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.Parent.NotifFrame.Description.Text = "Copied The Shadow's Hub Client Website Link In Your ClipBoard."
+		script.Parent.Parent.Parent.Parent.NotifFrame.Visible = true
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 1
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.8
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.6
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.4
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.2
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0
+		wait(5)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.2
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.4
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.6
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 0.8
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Transparency = 1
+		wait(0.01)
+		script.Parent.Parent.Parent.Parent.NotifFrame.Visible = false
+		setclipboard("https://shadowhub.xyz")
+	end)
+end
+coroutine.wrap(EDOSGZ_fake_script)()
+local function JVIQDV_fake_script() -- SHCL.LoadedNotif 
 	local script = Instance.new('LocalScript', SHCL)
 
-	wait(3)
+	wait(1)
 	script.Parent.NotifFrame.Visible = true
 	script.Parent.NotifFrame.Transparency = 1
 	wait(0.01)
@@ -1297,4 +1621,86 @@ local function QCCRINP_fake_script() -- SHCL.LoadedNotif
 	wait(0.01)
 	script.Parent.NotifFrame.Visible = false
 end
-coroutine.wrap(QCCRINP_fake_script)()
+coroutine.wrap(JVIQDV_fake_script)()
+local function PMNHGG_fake_script() -- Yes.LocalScript 
+	local script = Instance.new('LocalScript', Yes)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.WarningFrame.Transparency = 0.2
+		wait(0.1)
+		script.Parent.Parent.Parent.WarningFrame.Transparency = 0.4
+		wait(0.1)
+		script.Parent.Parent.Parent.WarningFrame.Transparency = 0.6
+		wait(0.1)
+		script.Parent.Parent.Parent.WarningFrame.Transparency = 0.8
+		wait(0.1)
+		script.Parent.Parent.Parent.WarningFrame.Transparency = 1
+		wait(0.1)
+		script.Parent.Parent.Parent.WarningFrame.Visible = false
+		wait(2)
+		game:shutdown()
+	end)
+end
+coroutine.wrap(PMNHGG_fake_script)()
+local function NMOB_fake_script() -- No.LocalScript 
+	local script = Instance.new('LocalScript', No)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.WarningFrame.Transparency = 0.2
+		wait(0.1)
+		script.Parent.Parent.Parent.WarningFrame.Transparency = 0.4
+		wait(0.1)
+		script.Parent.Parent.Parent.WarningFrame.Transparency = 0.6
+		wait(0.1)
+		script.Parent.Parent.Parent.WarningFrame.Transparency = 0.8
+		wait(0.1)
+		script.Parent.Parent.Parent.WarningFrame.Transparency = 1
+		wait(0.1)
+		script.Parent.Parent.Parent.WarningFrame.Visible = false
+	end)
+end
+coroutine.wrap(NMOB_fake_script)()
+local function AVFM_fake_script() -- WarningFrame.DragScript 
+	local script = Instance.new('LocalScript', WarningFrame)
+
+	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
+	--Put this inside of your Frame and configure the speed if you would like.
+	--Enjoy! Credits go to: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
+	
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(AVFM_fake_script)()
