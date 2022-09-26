@@ -48,6 +48,7 @@ local Blur = Instance.new("BlurEffect")
 
 SHCL.Name = "SHCL"
 SHCL.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+SHCL.DisplayOrder = 150
 SHCL.ResetOnSpawn = false
 
 Frame.Parent = SHCL
@@ -327,7 +328,7 @@ Blur.Enabled = true
 
 -- Scripts:
 
-local function XXTPEXY_fake_script() -- Frame.Keybind Script 
+local function EFLEGFM_fake_script() -- Frame.Keybind Script 
 	local script = Instance.new('LocalScript', Frame)
 
 	local frame = script.Parent.Parent.Frame -- Make this you frame Name!
@@ -373,8 +374,8 @@ local function XXTPEXY_fake_script() -- Frame.Keybind Script
 	end
 	
 end
-coroutine.wrap(XXTPEXY_fake_script)()
-local function BJEP_fake_script() -- Frame.Keybind Script2 
+coroutine.wrap(EFLEGFM_fake_script)()
+local function NCLA_fake_script() -- Frame.Keybind Script2 
 	local script = Instance.new('LocalScript', Frame)
 
 	local frame = script.Parent.Parent.Blur -- Make this you frame Name!
@@ -400,8 +401,8 @@ local function BJEP_fake_script() -- Frame.Keybind Script2
 	end)
 	
 end
-coroutine.wrap(BJEP_fake_script)()
-local function BDJCNE_fake_script() -- SettingsButton.Script 
+coroutine.wrap(NCLA_fake_script)()
+local function VKEZMV_fake_script() -- SettingsButton.Script 
 	local script = Instance.new('LocalScript', SettingsButton)
 
 	script.Parent.MouseButton1Click:connect(function()
@@ -412,8 +413,8 @@ local function BDJCNE_fake_script() -- SettingsButton.Script
 		end
 	end)
 end
-coroutine.wrap(BDJCNE_fake_script)()
-local function GSTLVB_fake_script() -- WebsiteButton.LocalScript 
+coroutine.wrap(VKEZMV_fake_script)()
+local function RFXSYF_fake_script() -- WebsiteButton.LocalScript 
 	local script = Instance.new('LocalScript', WebsiteButton)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -445,8 +446,8 @@ local function GSTLVB_fake_script() -- WebsiteButton.LocalScript
 		setclipboard("https://shadowhub.xyz")
 	end)
 end
-coroutine.wrap(GSTLVB_fake_script)()
-local function TVSJJ_fake_script() -- TracersButton.Example 
+coroutine.wrap(RFXSYF_fake_script)()
+local function MJFTLY_fake_script() -- TracersButton.Example 
 	local script = Instance.new('LocalScript', TracersButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -457,8 +458,8 @@ local function TVSJJ_fake_script() -- TracersButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(TVSJJ_fake_script)()
-local function TOTBCJ_fake_script() -- TracersButton.Script 
+coroutine.wrap(MJFTLY_fake_script)()
+local function NHGDEK_fake_script() -- TracersButton.Script 
 	local script = Instance.new('LocalScript', TracersButton)
 
 	_G.DefaultSettings = false   -- If set to true then the tracer script would run with default settings regardless of any changes you made.
@@ -710,8 +711,8 @@ local function TOTBCJ_fake_script() -- TracersButton.Script
 		end
 	end)
 end
-coroutine.wrap(TOTBCJ_fake_script)()
-local function TWYLNN_fake_script() -- ESPBoxesButton.Example 
+coroutine.wrap(NHGDEK_fake_script)()
+local function YZYHRPS_fake_script() -- ESPBoxesButton.Example 
 	local script = Instance.new('LocalScript', ESPBoxesButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -722,8 +723,8 @@ local function TWYLNN_fake_script() -- ESPBoxesButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(TWYLNN_fake_script)()
-local function XGKEY_fake_script() -- ESPBoxesButton.Script 
+coroutine.wrap(YZYHRPS_fake_script)()
+local function BWGWUX_fake_script() -- ESPBoxesButton.Script 
 	local script = Instance.new('LocalScript', ESPBoxesButton)
 
 	_G.SendNotifications = false   -- If set to true then the script would notify you frequently on any changes applied and when loaded / errored. (If a game can detect this, it is recommended to set it to false)
@@ -1063,8 +1064,8 @@ local function XGKEY_fake_script() -- ESPBoxesButton.Script
 		end
 	end)
 end
-coroutine.wrap(XGKEY_fake_script)()
-local function FYFC_fake_script() -- AimAssistButton.Example 
+coroutine.wrap(BWGWUX_fake_script)()
+local function VGUR_fake_script() -- AimAssistButton.Example 
 	local script = Instance.new('LocalScript', AimAssistButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1075,8 +1076,8 @@ local function FYFC_fake_script() -- AimAssistButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(FYFC_fake_script)()
-local function AXZB_fake_script() -- AimAssistButton.Script 
+coroutine.wrap(VGUR_fake_script)()
+local function NZDE_fake_script() -- AimAssistButton.Script 
 	local script = Instance.new('LocalScript', AimAssistButton)
 
 	_G.AimbotEnabled = false
@@ -1194,8 +1195,8 @@ local function AXZB_fake_script() -- AimAssistButton.Script
 		end
 	end)
 end
-coroutine.wrap(AXZB_fake_script)()
-local function SEGDLHU_fake_script() -- InfJumpButton.Example 
+coroutine.wrap(NZDE_fake_script)()
+local function IYQEZ_fake_script() -- InfJumpButton.Example 
 	local script = Instance.new('LocalScript', InfJumpButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1206,8 +1207,8 @@ local function SEGDLHU_fake_script() -- InfJumpButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(SEGDLHU_fake_script)()
-local function FMNP_fake_script() -- InfJumpButton.Script 
+coroutine.wrap(IYQEZ_fake_script)()
+local function WIDRXT_fake_script() -- InfJumpButton.Script 
 	local script = Instance.new('LocalScript', InfJumpButton)
 
 	_G.infJump1 = false
@@ -1267,8 +1268,8 @@ local function FMNP_fake_script() -- InfJumpButton.Script
 		end
 	end)
 end
-coroutine.wrap(FMNP_fake_script)()
-local function PGNN_fake_script() -- FBButton.Example 
+coroutine.wrap(WIDRXT_fake_script)()
+local function XWNEAX_fake_script() -- FBButton.Example 
 	local script = Instance.new('LocalScript', FBButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1279,8 +1280,8 @@ local function PGNN_fake_script() -- FBButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(PGNN_fake_script)()
-local function XTUMDDT_fake_script() -- FBButton.Script 
+coroutine.wrap(XWNEAX_fake_script)()
+local function NDEW_fake_script() -- FBButton.Script 
 	local script = Instance.new('LocalScript', FBButton)
 
 	_G.FullBrightEnabled = false
@@ -1402,8 +1403,8 @@ local function XTUMDDT_fake_script() -- FBButton.Script
 		end
 	end)
 end
-coroutine.wrap(XTUMDDT_fake_script)()
-local function FYNM_fake_script() -- CloseRoblox.Example 
+coroutine.wrap(NDEW_fake_script)()
+local function VOQZXGN_fake_script() -- CloseRoblox.Example 
 	local script = Instance.new('LocalScript', CloseRoblox)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1414,8 +1415,8 @@ local function FYNM_fake_script() -- CloseRoblox.Example
 		end
 	end)--]]
 end
-coroutine.wrap(FYNM_fake_script)()
-local function NUOC_fake_script() -- CloseRoblox.Script 
+coroutine.wrap(VOQZXGN_fake_script)()
+local function XSCJZA_fake_script() -- CloseRoblox.Script 
 	local script = Instance.new('LocalScript', CloseRoblox)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1431,8 +1432,8 @@ local function NUOC_fake_script() -- CloseRoblox.Script
 		script.Parent.Parent.Parent.Parent.WarningFrame.Transparency = 0
 	end)
 end
-coroutine.wrap(NUOC_fake_script)()
-local function OHBM_fake_script() -- Frame.DragScript 
+coroutine.wrap(XSCJZA_fake_script)()
+local function ZGOBZA_fake_script() -- Frame.DragScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
@@ -1475,8 +1476,8 @@ local function OHBM_fake_script() -- Frame.DragScript
 	end)
 	
 end
-coroutine.wrap(OHBM_fake_script)()
-local function PRZPU_fake_script() -- SettingsFrame.DragScript 
+coroutine.wrap(ZGOBZA_fake_script)()
+local function UYEJX_fake_script() -- SettingsFrame.DragScript 
 	local script = Instance.new('LocalScript', SettingsFrame)
 
 	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
@@ -1519,8 +1520,8 @@ local function PRZPU_fake_script() -- SettingsFrame.DragScript
 	end)
 	
 end
-coroutine.wrap(PRZPU_fake_script)()
-local function QGPIUT_fake_script() -- BlurButton.Example 
+coroutine.wrap(UYEJX_fake_script)()
+local function NQCZZO_fake_script() -- BlurButton.Example 
 	local script = Instance.new('LocalScript', BlurButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1531,8 +1532,8 @@ local function QGPIUT_fake_script() -- BlurButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(QGPIUT_fake_script)()
-local function MQXR_fake_script() -- BlurButton.Script 
+coroutine.wrap(NQCZZO_fake_script)()
+local function PTJISG_fake_script() -- BlurButton.Script 
 	local script = Instance.new('LocalScript', BlurButton)
 
 	_G.BackgroundBlur = true
@@ -1558,8 +1559,8 @@ local function MQXR_fake_script() -- BlurButton.Script
 		end
 	end)
 end
-coroutine.wrap(MQXR_fake_script)()
-local function EDOSGZ_fake_script() -- WebsiteButton_2.LocalScript 
+coroutine.wrap(PTJISG_fake_script)()
+local function LFMQU_fake_script() -- WebsiteButton_2.LocalScript 
 	local script = Instance.new('LocalScript', WebsiteButton_2)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1591,8 +1592,8 @@ local function EDOSGZ_fake_script() -- WebsiteButton_2.LocalScript
 		setclipboard("https://shadowhub.xyz")
 	end)
 end
-coroutine.wrap(EDOSGZ_fake_script)()
-local function JVIQDV_fake_script() -- SHCL.LoadedNotif 
+coroutine.wrap(LFMQU_fake_script)()
+local function UZKU_fake_script() -- SHCL.LoadedNotif 
 	local script = Instance.new('LocalScript', SHCL)
 
 	wait(1)
@@ -1621,8 +1622,8 @@ local function JVIQDV_fake_script() -- SHCL.LoadedNotif
 	wait(0.01)
 	script.Parent.NotifFrame.Visible = false
 end
-coroutine.wrap(JVIQDV_fake_script)()
-local function PMNHGG_fake_script() -- Yes.LocalScript 
+coroutine.wrap(UZKU_fake_script)()
+local function IFNYRGL_fake_script() -- Yes.LocalScript 
 	local script = Instance.new('LocalScript', Yes)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1641,8 +1642,8 @@ local function PMNHGG_fake_script() -- Yes.LocalScript
 		game:shutdown()
 	end)
 end
-coroutine.wrap(PMNHGG_fake_script)()
-local function NMOB_fake_script() -- No.LocalScript 
+coroutine.wrap(IFNYRGL_fake_script)()
+local function SWOY_fake_script() -- No.LocalScript 
 	local script = Instance.new('LocalScript', No)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1659,8 +1660,8 @@ local function NMOB_fake_script() -- No.LocalScript
 		script.Parent.Parent.Parent.WarningFrame.Visible = false
 	end)
 end
-coroutine.wrap(NMOB_fake_script)()
-local function AVFM_fake_script() -- WarningFrame.DragScript 
+coroutine.wrap(SWOY_fake_script)()
+local function RKELZDT_fake_script() -- WarningFrame.DragScript 
 	local script = Instance.new('LocalScript', WarningFrame)
 
 	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
@@ -1703,4 +1704,4 @@ local function AVFM_fake_script() -- WarningFrame.DragScript
 	end)
 	
 end
-coroutine.wrap(AVFM_fake_script)()
+coroutine.wrap(RKELZDT_fake_script)()
