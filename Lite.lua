@@ -24,24 +24,32 @@ local FBButton = Instance.new("TextButton")
 local UICorner_7 = Instance.new("UICorner")
 local CloseRoblox = Instance.new("TextButton")
 local UICorner_8 = Instance.new("UICorner")
-local SettingsFrame = Instance.new("Frame")
+local AntiKick = Instance.new("TextButton")
 local UICorner_9 = Instance.new("UICorner")
-local BlurButton = Instance.new("TextButton")
+local CCButton = Instance.new("TextButton")
 local UICorner_10 = Instance.new("UICorner")
-local Line1_2 = Instance.new("Frame")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local SettingsFrame = Instance.new("Frame")
 local UICorner_11 = Instance.new("UICorner")
+local BlurButton = Instance.new("TextButton")
+local UICorner_12 = Instance.new("UICorner")
+local Line1_2 = Instance.new("Frame")
+local UICorner_13 = Instance.new("UICorner")
 local ImageLabel_2 = Instance.new("ImageLabel")
 local WebsiteButton_2 = Instance.new("ImageButton")
+local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 local NotifFrame = Instance.new("Frame")
-local UICorner_12 = Instance.new("UICorner")
+local UICorner_14 = Instance.new("UICorner")
 local Title = Instance.new("TextLabel")
 local Description = Instance.new("TextLabel")
+local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
 local WarningFrame = Instance.new("Frame")
-local UICorner_13 = Instance.new("UICorner")
+local UICorner_15 = Instance.new("UICorner")
 local Title_2 = Instance.new("TextLabel")
 local Description_2 = Instance.new("TextLabel")
 local Yes = Instance.new("TextButton")
 local No = Instance.new("TextButton")
+local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
 local Blur = Instance.new("BlurEffect")
 
 --Properties:
@@ -145,7 +153,7 @@ InfJumpButton.Name = "InfJumpButton"
 InfJumpButton.Parent = ScrollingFrame
 InfJumpButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 InfJumpButton.BorderSizePixel = 0
-InfJumpButton.Position = UDim2.new(0.0918367356, 0, 0.176742956, 0)
+InfJumpButton.Position = UDim2.new(0.0918367356, 0, 0.175792396, 0)
 InfJumpButton.Size = UDim2.new(0, 160, 0, 26)
 InfJumpButton.Font = Enum.Font.Gotham
 InfJumpButton.Text = "Infinite Jump"
@@ -173,7 +181,7 @@ CloseRoblox.Name = "CloseRoblox"
 CloseRoblox.Parent = ScrollingFrame
 CloseRoblox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 CloseRoblox.BorderSizePixel = 0
-CloseRoblox.Position = UDim2.new(0.096938774, 0, 0.216666907, 0)
+CloseRoblox.Position = UDim2.new(0.096938774, 0, 0.217617482, 0)
 CloseRoblox.Size = UDim2.new(0, 160, 0, 26)
 CloseRoblox.Font = Enum.Font.Gotham
 CloseRoblox.Text = "Close Roblox"
@@ -183,15 +191,46 @@ CloseRoblox.TextWrapped = true
 
 UICorner_8.Parent = CloseRoblox
 
+AntiKick.Name = "AntiKick"
+AntiKick.Parent = ScrollingFrame
+AntiKick.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AntiKick.BorderSizePixel = 0
+AntiKick.Position = UDim2.new(0.0918367356, 0, 0.25896731, 0)
+AntiKick.Size = UDim2.new(0, 160, 0, 26)
+AntiKick.Font = Enum.Font.Gotham
+AntiKick.Text = "AntiKick"
+AntiKick.TextColor3 = Color3.fromRGB(177, 177, 177)
+AntiKick.TextSize = 19.000
+AntiKick.TextWrapped = true
+
+UICorner_9.Parent = AntiKick
+
+CCButton.Name = "CCButton"
+CCButton.Parent = ScrollingFrame
+CCButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CCButton.BorderSizePixel = 0
+CCButton.Position = UDim2.new(0.0918367356, 0, 0.298724174, 0)
+CCButton.Size = UDim2.new(0, 160, 0, 26)
+CCButton.Font = Enum.Font.Gotham
+CCButton.Text = "Client Crasher"
+CCButton.TextColor3 = Color3.fromRGB(177, 177, 177)
+CCButton.TextSize = 19.000
+CCButton.TextWrapped = true
+
+UICorner_10.Parent = CCButton
+
+UIAspectRatioConstraint.Parent = Frame
+UIAspectRatioConstraint.AspectRatio = 0.388
+
 SettingsFrame.Name = "SettingsFrame"
 SettingsFrame.Parent = SHCL
 SettingsFrame.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
 SettingsFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)
-SettingsFrame.Position = UDim2.new(0.170881227, 0, 0.00961538497, 0)
+SettingsFrame.Position = UDim2.new(0.167492107, 0, 0.00961538497, 0)
 SettingsFrame.Size = UDim2.new(0, 204, 0, 526)
 SettingsFrame.Visible = false
 
-UICorner_9.Parent = SettingsFrame
+UICorner_11.Parent = SettingsFrame
 
 BlurButton.Name = "BlurButton"
 BlurButton.Parent = SettingsFrame
@@ -205,7 +244,7 @@ BlurButton.TextColor3 = Color3.fromRGB(177, 177, 177)
 BlurButton.TextSize = 19.000
 BlurButton.TextWrapped = true
 
-UICorner_10.Parent = BlurButton
+UICorner_12.Parent = BlurButton
 
 Line1_2.Name = "Line1"
 Line1_2.Parent = SettingsFrame
@@ -213,7 +252,7 @@ Line1_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Line1_2.Position = UDim2.new(0.00490199821, 0, -0.0005573628, 0)
 Line1_2.Size = UDim2.new(0, 203, 0, 40)
 
-UICorner_11.Parent = Line1_2
+UICorner_13.Parent = Line1_2
 
 ImageLabel_2.Parent = Line1_2
 ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -230,14 +269,17 @@ WebsiteButton_2.Position = UDim2.new(0.827586234, 0, 0.182329327, 0)
 WebsiteButton_2.Size = UDim2.new(0, 28, 0, 28)
 WebsiteButton_2.Image = "rbxassetid://1091572755"
 
+UIAspectRatioConstraint_2.Parent = SettingsFrame
+UIAspectRatioConstraint_2.AspectRatio = 0.388
+
 NotifFrame.Name = "NotifFrame"
 NotifFrame.Parent = SHCL
 NotifFrame.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
-NotifFrame.Position = UDim2.new(0.792337179, 0, 0.854166687, 0)
+NotifFrame.Position = UDim2.new(0.742629588, 0, 0.898666084, 0)
 NotifFrame.Size = UDim2.new(0, 254, 0, 73)
 NotifFrame.Visible = false
 
-UICorner_12.Parent = NotifFrame
+UICorner_14.Parent = NotifFrame
 
 Title.Name = "Title"
 Title.Parent = NotifFrame
@@ -263,14 +305,17 @@ Description.TextColor3 = Color3.fromRGB(153, 153, 153)
 Description.TextSize = 13.000
 Description.TextWrapped = true
 
+UIAspectRatioConstraint_3.Parent = NotifFrame
+UIAspectRatioConstraint_3.AspectRatio = 3.479
+
 WarningFrame.Name = "WarningFrame"
 WarningFrame.Parent = SHCL
 WarningFrame.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
-WarningFrame.Position = UDim2.new(0.313565612, 0, 0.216346145, 0)
+WarningFrame.Position = UDim2.new(0.254111409, 0, 0.30658102, 0)
 WarningFrame.Size = UDim2.new(0, 503, 0, 311)
 WarningFrame.Visible = false
 
-UICorner_13.Parent = WarningFrame
+UICorner_15.Parent = WarningFrame
 
 Title_2.Name = "Title"
 Title_2.Parent = WarningFrame
@@ -322,13 +367,16 @@ No.TextScaled = true
 No.TextSize = 14.000
 No.TextWrapped = true
 
+UIAspectRatioConstraint_4.Parent = WarningFrame
+UIAspectRatioConstraint_4.AspectRatio = 1.617
+
 Blur.Parent = SHCL
 Blur.Size = 15
 Blur.Enabled = true
 
 -- Scripts:
 
-local function EFLEGFM_fake_script() -- Frame.Keybind Script 
+local function GREPJ_fake_script() -- Frame.Keybind Script 
 	local script = Instance.new('LocalScript', Frame)
 
 	local frame = script.Parent.Parent.Frame -- Make this you frame Name!
@@ -374,8 +422,8 @@ local function EFLEGFM_fake_script() -- Frame.Keybind Script
 	end
 	
 end
-coroutine.wrap(EFLEGFM_fake_script)()
-local function NCLA_fake_script() -- Frame.Keybind Script2 
+coroutine.wrap(GREPJ_fake_script)()
+local function VGRDVCE_fake_script() -- Frame.Keybind Script2 
 	local script = Instance.new('LocalScript', Frame)
 
 	local frame = script.Parent.Parent.Blur -- Make this you frame Name!
@@ -401,8 +449,8 @@ local function NCLA_fake_script() -- Frame.Keybind Script2
 	end)
 	
 end
-coroutine.wrap(NCLA_fake_script)()
-local function VKEZMV_fake_script() -- SettingsButton.Script 
+coroutine.wrap(VGRDVCE_fake_script)()
+local function ZAEWM_fake_script() -- SettingsButton.Script 
 	local script = Instance.new('LocalScript', SettingsButton)
 
 	script.Parent.MouseButton1Click:connect(function()
@@ -413,8 +461,8 @@ local function VKEZMV_fake_script() -- SettingsButton.Script
 		end
 	end)
 end
-coroutine.wrap(VKEZMV_fake_script)()
-local function RFXSYF_fake_script() -- WebsiteButton.LocalScript 
+coroutine.wrap(ZAEWM_fake_script)()
+local function GZKYMI_fake_script() -- WebsiteButton.LocalScript 
 	local script = Instance.new('LocalScript', WebsiteButton)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -446,8 +494,8 @@ local function RFXSYF_fake_script() -- WebsiteButton.LocalScript
 		setclipboard("https://shadowhub.xyz")
 	end)
 end
-coroutine.wrap(RFXSYF_fake_script)()
-local function MJFTLY_fake_script() -- TracersButton.Example 
+coroutine.wrap(GZKYMI_fake_script)()
+local function SBKTKJ_fake_script() -- TracersButton.Example 
 	local script = Instance.new('LocalScript', TracersButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -458,22 +506,22 @@ local function MJFTLY_fake_script() -- TracersButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(MJFTLY_fake_script)()
-local function NHGDEK_fake_script() -- TracersButton.Script 
+coroutine.wrap(SBKTKJ_fake_script)()
+local function UARZJWC_fake_script() -- TracersButton.Script 
 	local script = Instance.new('LocalScript', TracersButton)
 
+	_G.SendNotifications = false   -- If set to true then the script would notify you frequently on any changes applied and when loaded / errored. (If a game can detect this, it is recommended to set it to false)
 	_G.DefaultSettings = false   -- If set to true then the tracer script would run with default settings regardless of any changes you made.
 	_G.TeamCheck = false   -- If set to true then the script would create tracers only for the enemy team members. 
 	_G.FromMouse = false   -- If set to true, the tracers will come from the position of your mouse curson on your screen.
 	_G.FromCenter = true   -- If set to true, the tracers will come from the center of your screen.
 	_G.FromBottom = false   -- If set to true, the tracers will come from the bottom of your screen. 
-	_G.TracersVisible = false   -- If set to true then the tracers will be visible and vice versa.
+	_G.TracersVisible = true   -- If set to true then the tracers will be visible and vice versa.
 	_G.TracerColor = Color3.fromRGB(255, 80, 10)   -- The color that the tracers would appear as.
 	_G.TracerThickness = 1   -- The thickness of the tracers.
 	_G.TracerTransparency = 0.7   -- The transparency of the tracers.
 	_G.ModeSkipKey = Enum.KeyCode.E   -- The key that changes between modes that indicate where will the tracers come from.
 	--_G.DisableKey = Enum.KeyCode.Q   The key that disables / enables the tracers.
-	_G.SendNotifications = false
 	
 	function tracers()
 		local function API_Check()
@@ -711,8 +759,8 @@ local function NHGDEK_fake_script() -- TracersButton.Script
 		end
 	end)
 end
-coroutine.wrap(NHGDEK_fake_script)()
-local function YZYHRPS_fake_script() -- ESPBoxesButton.Example 
+coroutine.wrap(UARZJWC_fake_script)()
+local function YZTENI_fake_script() -- ESPBoxesButton.Example 
 	local script = Instance.new('LocalScript', ESPBoxesButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -723,8 +771,8 @@ local function YZYHRPS_fake_script() -- ESPBoxesButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(YZYHRPS_fake_script)()
-local function BWGWUX_fake_script() -- ESPBoxesButton.Script 
+coroutine.wrap(YZTENI_fake_script)()
+local function VHLZMO_fake_script() -- ESPBoxesButton.Script 
 	local script = Instance.new('LocalScript', ESPBoxesButton)
 
 	_G.SendNotifications = false   -- If set to true then the script would notify you frequently on any changes applied and when loaded / errored. (If a game can detect this, it is recommended to set it to false)
@@ -1064,8 +1112,8 @@ local function BWGWUX_fake_script() -- ESPBoxesButton.Script
 		end
 	end)
 end
-coroutine.wrap(BWGWUX_fake_script)()
-local function VGUR_fake_script() -- AimAssistButton.Example 
+coroutine.wrap(VHLZMO_fake_script)()
+local function KFRSC_fake_script() -- AimAssistButton.Example 
 	local script = Instance.new('LocalScript', AimAssistButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1076,8 +1124,8 @@ local function VGUR_fake_script() -- AimAssistButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(VGUR_fake_script)()
-local function NZDE_fake_script() -- AimAssistButton.Script 
+coroutine.wrap(KFRSC_fake_script)()
+local function CUDBDF_fake_script() -- AimAssistButton.Script 
 	local script = Instance.new('LocalScript', AimAssistButton)
 
 	_G.AimbotEnabled = false
@@ -1195,8 +1243,8 @@ local function NZDE_fake_script() -- AimAssistButton.Script
 		end
 	end)
 end
-coroutine.wrap(NZDE_fake_script)()
-local function IYQEZ_fake_script() -- InfJumpButton.Example 
+coroutine.wrap(CUDBDF_fake_script)()
+local function KAJCB_fake_script() -- InfJumpButton.Example 
 	local script = Instance.new('LocalScript', InfJumpButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1207,8 +1255,8 @@ local function IYQEZ_fake_script() -- InfJumpButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(IYQEZ_fake_script)()
-local function WIDRXT_fake_script() -- InfJumpButton.Script 
+coroutine.wrap(KAJCB_fake_script)()
+local function SBNK_fake_script() -- InfJumpButton.Script 
 	local script = Instance.new('LocalScript', InfJumpButton)
 
 	_G.infJump1 = false
@@ -1268,8 +1316,8 @@ local function WIDRXT_fake_script() -- InfJumpButton.Script
 		end
 	end)
 end
-coroutine.wrap(WIDRXT_fake_script)()
-local function XWNEAX_fake_script() -- FBButton.Example 
+coroutine.wrap(SBNK_fake_script)()
+local function IJPK_fake_script() -- FBButton.Example 
 	local script = Instance.new('LocalScript', FBButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1280,8 +1328,8 @@ local function XWNEAX_fake_script() -- FBButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(XWNEAX_fake_script)()
-local function NDEW_fake_script() -- FBButton.Script 
+coroutine.wrap(IJPK_fake_script)()
+local function GZAVZLU_fake_script() -- FBButton.Script 
 	local script = Instance.new('LocalScript', FBButton)
 
 	_G.FullBrightEnabled = false
@@ -1403,8 +1451,8 @@ local function NDEW_fake_script() -- FBButton.Script
 		end
 	end)
 end
-coroutine.wrap(NDEW_fake_script)()
-local function VOQZXGN_fake_script() -- CloseRoblox.Example 
+coroutine.wrap(GZAVZLU_fake_script)()
+local function XFSTK_fake_script() -- CloseRoblox.Example 
 	local script = Instance.new('LocalScript', CloseRoblox)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1415,8 +1463,8 @@ local function VOQZXGN_fake_script() -- CloseRoblox.Example
 		end
 	end)--]]
 end
-coroutine.wrap(VOQZXGN_fake_script)()
-local function XSCJZA_fake_script() -- CloseRoblox.Script 
+coroutine.wrap(XFSTK_fake_script)()
+local function BOYFHK_fake_script() -- CloseRoblox.Script 
 	local script = Instance.new('LocalScript', CloseRoblox)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1432,8 +1480,121 @@ local function XSCJZA_fake_script() -- CloseRoblox.Script
 		script.Parent.Parent.Parent.Parent.WarningFrame.Transparency = 0
 	end)
 end
-coroutine.wrap(XSCJZA_fake_script)()
-local function ZGOBZA_fake_script() -- Frame.DragScript 
+coroutine.wrap(BOYFHK_fake_script)()
+local function QSTAJVF_fake_script() -- AntiKick.Example 
+	local script = Instance.new('LocalScript', AntiKick)
+
+	--[[script.Parent.MouseButton1Click:connect(function()
+		if script.Parent.Parent.Parent.CharacterFrame.Visible == false then
+			script.Parent.Parent.Parent.CharacterFrame.Visible = true
+		else
+			script.Parent.Parent.Parent.CharacterFrame.Visible = false
+		end
+	end)--]]
+end
+coroutine.wrap(QSTAJVF_fake_script)()
+local function KDEK_fake_script() -- AntiKick.Script 
+	local script = Instance.new('LocalScript', AntiKick)
+
+	_G.antiKick = false
+	
+	function antiKick1()
+		
+	end
+	if _G.antiKick == true then
+	
+	--// Variables
+	
+	local Players = game:GetService("Players")
+	local OldNameCall = nil
+	
+	--// Global Variables
+	
+	getgenv().SendNotifications = true -- Set to true if you want to get notified regularly.
+	
+	--// Anti Kick Hook
+	
+	OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...)
+		local NameCallMethod = getnamecallmethod()
+	
+		if tostring(string.lower(NameCallMethod)) == "kick" then
+			if getgenv().SendNotifications == true then
+				game:GetService("StarterGui"):SetCore("SendNotification", {
+					Title = "Shadow's Hub",
+					Text = "Shadow's Hub Just Blocked A Kick Request !.",
+					Icon = "rbxassetid://6238540373",
+					Duration = 3,
+				})
+			end
+	
+			return nil
+		end
+	
+		return OldNameCall(Self, ...)
+	end)
+	
+	if getgenv().SendNotifications == true then
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "Shadow's Hub",
+			Text = "Shadow's Hub Is Now Protecting You !",
+			Icon = "rbxassetid://6238537240",
+			Duration = 5,
+		})
+		end
+		end
+		
+		script.Parent.MouseButton1Click:connect(function()
+			if _G.antiKick == false then
+				_G.antiKick = true
+				script.Parent.Parent.AntiKick.BackgroundColor3 = Color3.new(0.427451, 1, 0.388235)
+				antiKick1()
+			elseif _G.antiKick == true then
+				_G.antiKick = false
+				script.Parent.Parent.AntiKick.BackgroundColor3 = Color3.new(0, 0, 0)
+			end
+		end)
+end
+coroutine.wrap(KDEK_fake_script)()
+local function UERMEL_fake_script() -- CCButton.Example 
+	local script = Instance.new('LocalScript', CCButton)
+
+	--[[script.Parent.MouseButton1Click:connect(function()
+		if script.Parent.Parent.Parent.CharacterFrame.Visible == false then
+			script.Parent.Parent.Parent.CharacterFrame.Visible = true
+		else
+			script.Parent.Parent.Parent.CharacterFrame.Visible = false
+		end
+	end)--]]
+end
+coroutine.wrap(UERMEL_fake_script)()
+local function DGVDTYM_fake_script() -- CCButton.Script 
+	local script = Instance.new('LocalScript', CCButton)
+
+	_G.clientCrasherEnabled = false
+	
+	function clientCrasher()
+		wait(1)
+		while _G.clientCrasherEnabled == true do
+			ClientCrasherPart = Instance.new("Part",game.Workspace) --Directory of The Part
+			ClientCrasherPart.Size = Vector3.new(1,1,1) 	              --The Size of the Part
+			ClientCrasherPart.Position = Vector3.new(-37, -0.5, -90)      --The Position of The Part
+			ClientCrasherPart.Anchored = false     --Anchores The Part
+		end         
+	end
+	
+	script.Parent.MouseButton1Click:connect(function()
+		if _G.clientCrasherEnabled == false then
+			_G.clientCrasherEnabled = true
+			script.Parent.Parent.CCButton.BackgroundColor3 = Color3.new(0.427451, 1, 0.388235)
+			clientCrasher()
+		elseif _G.clientCrasherEnabled == true then
+			_G.clientCrasherEnabled = false
+			script.Parent.Parent.CCButton.BackgroundColor3 = Color3.new(0, 0, 0)
+		end
+	end)
+end
+coroutine.wrap(DGVDTYM_fake_script)()
+local function YSGT_fake_script() -- Frame.DragScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
@@ -1476,8 +1637,8 @@ local function ZGOBZA_fake_script() -- Frame.DragScript
 	end)
 	
 end
-coroutine.wrap(ZGOBZA_fake_script)()
-local function UYEJX_fake_script() -- SettingsFrame.DragScript 
+coroutine.wrap(YSGT_fake_script)()
+local function WGJMIM_fake_script() -- SettingsFrame.DragScript 
 	local script = Instance.new('LocalScript', SettingsFrame)
 
 	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
@@ -1520,8 +1681,8 @@ local function UYEJX_fake_script() -- SettingsFrame.DragScript
 	end)
 	
 end
-coroutine.wrap(UYEJX_fake_script)()
-local function NQCZZO_fake_script() -- BlurButton.Example 
+coroutine.wrap(WGJMIM_fake_script)()
+local function AEAAB_fake_script() -- BlurButton.Example 
 	local script = Instance.new('LocalScript', BlurButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1532,8 +1693,8 @@ local function NQCZZO_fake_script() -- BlurButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(NQCZZO_fake_script)()
-local function PTJISG_fake_script() -- BlurButton.Script 
+coroutine.wrap(AEAAB_fake_script)()
+local function QJIRKUH_fake_script() -- BlurButton.Script 
 	local script = Instance.new('LocalScript', BlurButton)
 
 	_G.BackgroundBlur = true
@@ -1559,8 +1720,8 @@ local function PTJISG_fake_script() -- BlurButton.Script
 		end
 	end)
 end
-coroutine.wrap(PTJISG_fake_script)()
-local function LFMQU_fake_script() -- WebsiteButton_2.LocalScript 
+coroutine.wrap(QJIRKUH_fake_script)()
+local function RLENI_fake_script() -- WebsiteButton_2.LocalScript 
 	local script = Instance.new('LocalScript', WebsiteButton_2)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1592,8 +1753,8 @@ local function LFMQU_fake_script() -- WebsiteButton_2.LocalScript
 		setclipboard("https://shadowhub.xyz")
 	end)
 end
-coroutine.wrap(LFMQU_fake_script)()
-local function UZKU_fake_script() -- SHCL.LoadedNotif 
+coroutine.wrap(RLENI_fake_script)()
+local function KGFIEOV_fake_script() -- SHCL.LoadedNotif 
 	local script = Instance.new('LocalScript', SHCL)
 
 	wait(1)
@@ -1622,8 +1783,8 @@ local function UZKU_fake_script() -- SHCL.LoadedNotif
 	wait(0.01)
 	script.Parent.NotifFrame.Visible = false
 end
-coroutine.wrap(UZKU_fake_script)()
-local function IFNYRGL_fake_script() -- Yes.LocalScript 
+coroutine.wrap(KGFIEOV_fake_script)()
+local function GAWS_fake_script() -- Yes.LocalScript 
 	local script = Instance.new('LocalScript', Yes)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1642,8 +1803,8 @@ local function IFNYRGL_fake_script() -- Yes.LocalScript
 		game:shutdown()
 	end)
 end
-coroutine.wrap(IFNYRGL_fake_script)()
-local function SWOY_fake_script() -- No.LocalScript 
+coroutine.wrap(GAWS_fake_script)()
+local function VXWHA_fake_script() -- No.LocalScript 
 	local script = Instance.new('LocalScript', No)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1660,8 +1821,8 @@ local function SWOY_fake_script() -- No.LocalScript
 		script.Parent.Parent.Parent.WarningFrame.Visible = false
 	end)
 end
-coroutine.wrap(SWOY_fake_script)()
-local function RKELZDT_fake_script() -- WarningFrame.DragScript 
+coroutine.wrap(VXWHA_fake_script)()
+local function YKJCFN_fake_script() -- WarningFrame.DragScript 
 	local script = Instance.new('LocalScript', WarningFrame)
 
 	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
@@ -1704,4 +1865,4 @@ local function RKELZDT_fake_script() -- WarningFrame.DragScript
 	end)
 	
 end
-coroutine.wrap(RKELZDT_fake_script)()
+coroutine.wrap(YKJCFN_fake_script)()
