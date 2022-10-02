@@ -973,6 +973,7 @@ _G.SizeIncrease = 1   -- How much the box's size is increased (The size is multi
 --_G.DisableKey = Enum.KeyCode.Q   -- The key that disables / enables the boxes.
 _G.acBypassEnabled = false
 _G.speedHack = false
+_G.clientCrasherEnabled = false
 local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid
 local Humanoid1 = game.Players.LocalPlayer.Character.Humanoid
 local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
@@ -997,9 +998,6 @@ local Holding = false
             end)
             Humanoid.WalkSpeed = _G.WS
             wait(0.01)
-end
-if _G.speedHack == false then
-    Humanoid.WalkSpeed = 16
 end
 end
 
@@ -2012,9 +2010,28 @@ end)
     end
    end
 
+   function walkSpeedBypass()
+while _G.acBypassSpeedEnabled == true do
+Humanoid.WalkSpeed = _G.WS
+wait(0.5)
+Humanoid.WalkSpeed = 16
+wait(0.8)
+end
+   end
+
+   function clientCrasher()
+    wait(1)
+while _G.clientCrasherEnabled == true do
+    ClientCrasherPart = Instance.new("Part",game.Workspace) --Directory of The Part
+    ClientCrasherPart.Size = Vector3.new(1,1,1) 	              --The Size of the Part
+    ClientCrasherPart.Position = Vector3.new(-37, -0.5, -90)      --The Position of The Part
+    ClientCrasherPart.Anchored = false     --Anchores The Part
+end         
+   end
+
 
     --Tabs
-
+    
 
     local bGameTab = Window:MakeTab({
         Name = "Character",
@@ -2136,7 +2153,7 @@ end)
         Default = false,
         Callback = function(Value)
             _G.acBypassSpeedEnabled = Value
-            walkSpeed()
+            walkSpeedBypass()
         end    
     })
 
@@ -2298,6 +2315,15 @@ end)
         Callback = function(Value)
             _G.bMessageSpamDelay = Value
         end	  
+    })
+
+    bUtilityTab:AddToggle({
+        Name = "Client Crasher",
+        Default = false,
+        Callback = function(Value)
+            _G.clientCrasherEnabled = Value
+            clientCrasher()
+        end    
     })
 
 
