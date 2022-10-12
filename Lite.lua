@@ -28,28 +28,46 @@ local AntiKick = Instance.new("TextButton")
 local UICorner_9 = Instance.new("UICorner")
 local CCButton = Instance.new("TextButton")
 local UICorner_10 = Instance.new("UICorner")
+local HBExanderButton = Instance.new("TextButton")
+local UICorner_11 = Instance.new("UICorner")
+local HBExanderSettingsButton = Instance.new("TextButton")
+local UICorner_12 = Instance.new("UICorner")
+local AntiVoidButton = Instance.new("TextButton")
+local UICorner_13 = Instance.new("UICorner")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 local SettingsFrame = Instance.new("Frame")
-local UICorner_11 = Instance.new("UICorner")
+local UICorner_14 = Instance.new("UICorner")
 local BlurButton = Instance.new("TextButton")
-local UICorner_12 = Instance.new("UICorner")
+local UICorner_15 = Instance.new("UICorner")
 local Line1_2 = Instance.new("Frame")
-local UICorner_13 = Instance.new("UICorner")
+local UICorner_16 = Instance.new("UICorner")
 local ImageLabel_2 = Instance.new("ImageLabel")
 local WebsiteButton_2 = Instance.new("ImageButton")
 local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 local NotifFrame = Instance.new("Frame")
-local UICorner_14 = Instance.new("UICorner")
+local UICorner_17 = Instance.new("UICorner")
 local Title = Instance.new("TextLabel")
 local Description = Instance.new("TextLabel")
 local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
 local WarningFrame = Instance.new("Frame")
-local UICorner_15 = Instance.new("UICorner")
+local UICorner_18 = Instance.new("UICorner")
 local Title_2 = Instance.new("TextLabel")
 local Description_2 = Instance.new("TextLabel")
 local Yes = Instance.new("TextButton")
 local No = Instance.new("TextButton")
 local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
+local HitBoxSettings = Instance.new("Frame")
+local UICorner_19 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local Line = Instance.new("Frame")
+local Down = Instance.new("TextButton")
+local CurrentSize = Instance.new("TextLabel")
+local Up = Instance.new("TextButton")
+local Line_2 = Instance.new("Frame")
+local CurrentTransparency = Instance.new("TextLabel")
+local Up1 = Instance.new("TextButton")
+local Down1 = Instance.new("TextButton")
 local Blur = Instance.new("BlurEffect")
 
 --Properties:
@@ -219,6 +237,49 @@ CCButton.TextWrapped = true
 
 UICorner_10.Parent = CCButton
 
+HBExanderButton.Name = "HBExanderButton"
+HBExanderButton.Parent = ScrollingFrame
+HBExanderButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+HBExanderButton.BorderSizePixel = 0
+HBExanderButton.Position = UDim2.new(0.0918367356, 0, 0.33864814, 0)
+HBExanderButton.Size = UDim2.new(0, 160, 0, 26)
+HBExanderButton.Font = Enum.Font.Gotham
+HBExanderButton.Text = "HitBox Expander"
+HBExanderButton.TextColor3 = Color3.fromRGB(177, 177, 177)
+HBExanderButton.TextSize = 19.000
+HBExanderButton.TextWrapped = true
+
+UICorner_11.Parent = HBExanderButton
+
+HBExanderSettingsButton.Name = "HBExanderSettingsButton"
+HBExanderSettingsButton.Parent = ScrollingFrame
+HBExanderSettingsButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+HBExanderSettingsButton.BorderSizePixel = 0
+HBExanderSettingsButton.Position = UDim2.new(0.0918367356, 0, 0.378572106, 0)
+HBExanderSettingsButton.Size = UDim2.new(0, 160, 0, 26)
+HBExanderSettingsButton.Font = Enum.Font.Gotham
+HBExanderSettingsButton.Text = "HitBox Expander Settings"
+HBExanderSettingsButton.TextColor3 = Color3.fromRGB(177, 177, 177)
+HBExanderSettingsButton.TextScaled = true
+HBExanderSettingsButton.TextSize = 19.000
+HBExanderSettingsButton.TextWrapped = true
+
+UICorner_12.Parent = HBExanderSettingsButton
+
+AntiVoidButton.Name = "AntiVoidButton"
+AntiVoidButton.Parent = ScrollingFrame
+AntiVoidButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AntiVoidButton.BorderSizePixel = 0
+AntiVoidButton.Position = UDim2.new(0.0918367356, 0, 0.419446588, 0)
+AntiVoidButton.Size = UDim2.new(0, 160, 0, 26)
+AntiVoidButton.Font = Enum.Font.Gotham
+AntiVoidButton.Text = "AntiVoid"
+AntiVoidButton.TextColor3 = Color3.fromRGB(177, 177, 177)
+AntiVoidButton.TextSize = 19.000
+AntiVoidButton.TextWrapped = true
+
+UICorner_13.Parent = AntiVoidButton
+
 UIAspectRatioConstraint.Parent = Frame
 UIAspectRatioConstraint.AspectRatio = 0.388
 
@@ -230,7 +291,7 @@ SettingsFrame.Position = UDim2.new(0.167492107, 0, 0.00961538497, 0)
 SettingsFrame.Size = UDim2.new(0, 204, 0, 526)
 SettingsFrame.Visible = false
 
-UICorner_11.Parent = SettingsFrame
+UICorner_14.Parent = SettingsFrame
 
 BlurButton.Name = "BlurButton"
 BlurButton.Parent = SettingsFrame
@@ -244,7 +305,7 @@ BlurButton.TextColor3 = Color3.fromRGB(177, 177, 177)
 BlurButton.TextSize = 19.000
 BlurButton.TextWrapped = true
 
-UICorner_12.Parent = BlurButton
+UICorner_15.Parent = BlurButton
 
 Line1_2.Name = "Line1"
 Line1_2.Parent = SettingsFrame
@@ -252,7 +313,7 @@ Line1_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Line1_2.Position = UDim2.new(0.00490199821, 0, -0.0005573628, 0)
 Line1_2.Size = UDim2.new(0, 203, 0, 40)
 
-UICorner_13.Parent = Line1_2
+UICorner_16.Parent = Line1_2
 
 ImageLabel_2.Parent = Line1_2
 ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -279,7 +340,7 @@ NotifFrame.Position = UDim2.new(0.742629588, 0, 0.898666084, 0)
 NotifFrame.Size = UDim2.new(0, 254, 0, 73)
 NotifFrame.Visible = false
 
-UICorner_14.Parent = NotifFrame
+UICorner_17.Parent = NotifFrame
 
 Title.Name = "Title"
 Title.Parent = NotifFrame
@@ -315,7 +376,7 @@ WarningFrame.Position = UDim2.new(0.254111409, 0, 0.30658102, 0)
 WarningFrame.Size = UDim2.new(0, 503, 0, 311)
 WarningFrame.Visible = false
 
-UICorner_15.Parent = WarningFrame
+UICorner_18.Parent = WarningFrame
 
 Title_2.Name = "Title"
 Title_2.Parent = WarningFrame
@@ -370,13 +431,131 @@ No.TextWrapped = true
 UIAspectRatioConstraint_4.Parent = WarningFrame
 UIAspectRatioConstraint_4.AspectRatio = 1.617
 
+HitBoxSettings.Name = "HitBoxSettings"
+HitBoxSettings.Parent = SHCL
+HitBoxSettings.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+HitBoxSettings.Position = UDim2.new(0.785608292, 0, 0.711884916, 0)
+HitBoxSettings.Size = UDim2.new(0, 273, 0, 161)
+HitBoxSettings.Visible = false
+
+UICorner_19.Parent = HitBoxSettings
+
+TextLabel.Parent = HitBoxSettings
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(0, 273, 0, 18)
+TextLabel.Font = Enum.Font.Gotham
+TextLabel.Text = "HitBoxes"
+TextLabel.TextColor3 = Color3.fromRGB(125, 125, 125)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextLabel_2.Parent = HitBoxSettings
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0, 0, 0.260869563, 0)
+TextLabel_2.Size = UDim2.new(0, 273, 0, 18)
+TextLabel_2.Font = Enum.Font.Gotham
+TextLabel_2.Text = "Size"
+TextLabel_2.TextColor3 = Color3.fromRGB(125, 125, 125)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+Line.Name = "Line"
+Line.Parent = HitBoxSettings
+Line.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Line.BorderSizePixel = 0
+Line.Position = UDim2.new(0, 0, 0.142857149, 0)
+Line.Size = UDim2.new(0, 273, 0, 11)
+
+Down.Name = "Down"
+Down.Parent = HitBoxSettings
+Down.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Down.BackgroundTransparency = 1.000
+Down.Position = UDim2.new(0.0293040276, 0, 0.371069491, 0)
+Down.Size = UDim2.new(0, 60, 0, 31)
+Down.Font = Enum.Font.SourceSans
+Down.Text = "-"
+Down.TextColor3 = Color3.fromRGB(131, 131, 131)
+Down.TextSize = 100.000
+Down.TextWrapped = true
+
+CurrentSize.Name = "CurrentSize"
+CurrentSize.Parent = HitBoxSettings
+CurrentSize.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CurrentSize.BackgroundTransparency = 1.000
+CurrentSize.Position = UDim2.new(0.395604402, 0, 0.428571433, 0)
+CurrentSize.Size = UDim2.new(0, 56, 0, 32)
+CurrentSize.Font = Enum.Font.Gotham
+CurrentSize.Text = "10"
+CurrentSize.TextColor3 = Color3.fromRGB(157, 157, 157)
+CurrentSize.TextSize = 22.000
+CurrentSize.TextWrapped = true
+
+Up.Name = "Up"
+Up.Parent = HitBoxSettings
+Up.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Up.BackgroundTransparency = 1.000
+Up.Position = UDim2.new(0.780219793, 0, 0.402125388, 0)
+Up.Size = UDim2.new(0, 60, 0, 31)
+Up.Font = Enum.Font.SourceSans
+Up.Text = "+"
+Up.TextColor3 = Color3.fromRGB(131, 131, 131)
+Up.TextSize = 51.000
+Up.TextWrapped = true
+
+Line_2.Name = "Line"
+Line_2.Parent = HitBoxSettings
+Line_2.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Line_2.BorderSizePixel = 0
+Line_2.Position = UDim2.new(-0.00366300368, 0, 0.670807421, 0)
+Line_2.Size = UDim2.new(0, 273, 0, 11)
+
+CurrentTransparency.Name = "CurrentTransparency"
+CurrentTransparency.Parent = HitBoxSettings
+CurrentTransparency.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CurrentTransparency.BackgroundTransparency = 1.000
+CurrentTransparency.Position = UDim2.new(0.395604402, 0, 0.795031071, 0)
+CurrentTransparency.Size = UDim2.new(0, 56, 0, 22)
+CurrentTransparency.Font = Enum.Font.Gotham
+CurrentTransparency.Text = "1"
+CurrentTransparency.TextColor3 = Color3.fromRGB(157, 157, 157)
+CurrentTransparency.TextSize = 22.000
+CurrentTransparency.TextWrapped = true
+
+Up1.Name = "Up1"
+Up1.Parent = HitBoxSettings
+Up1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Up1.BackgroundTransparency = 1.000
+Up1.Position = UDim2.new(0.780219793, 0, 0.781007409, 0)
+Up1.Size = UDim2.new(0, 60, 0, 31)
+Up1.Font = Enum.Font.SourceSans
+Up1.Text = "+"
+Up1.TextColor3 = Color3.fromRGB(131, 131, 131)
+Up1.TextSize = 51.000
+Up1.TextWrapped = true
+
+Down1.Name = "Down1"
+Down1.Parent = HitBoxSettings
+Down1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Down1.BackgroundTransparency = 1.000
+Down1.Position = UDim2.new(0.0293040276, 0, 0.749951482, 0)
+Down1.Size = UDim2.new(0, 60, 0, 31)
+Down1.Font = Enum.Font.SourceSans
+Down1.Text = "-"
+Down1.TextColor3 = Color3.fromRGB(131, 131, 131)
+Down1.TextSize = 100.000
+Down1.TextWrapped = true
+
 Blur.Parent = SHCL
 Blur.Size = 15
 Blur.Enabled = true
 
 -- Scripts:
 
-local function GREPJ_fake_script() -- Frame.Keybind Script 
+local function PAGK_fake_script() -- Frame.Keybind Script 
 	local script = Instance.new('LocalScript', Frame)
 
 	local frame = script.Parent.Parent.Frame -- Make this you frame Name!
@@ -422,8 +601,8 @@ local function GREPJ_fake_script() -- Frame.Keybind Script
 	end
 	
 end
-coroutine.wrap(GREPJ_fake_script)()
-local function VGRDVCE_fake_script() -- Frame.Keybind Script2 
+coroutine.wrap(PAGK_fake_script)()
+local function RTDP_fake_script() -- Frame.Keybind Script2 
 	local script = Instance.new('LocalScript', Frame)
 
 	local frame = script.Parent.Parent.Blur -- Make this you frame Name!
@@ -449,8 +628,8 @@ local function VGRDVCE_fake_script() -- Frame.Keybind Script2
 	end)
 	
 end
-coroutine.wrap(VGRDVCE_fake_script)()
-local function ZAEWM_fake_script() -- SettingsButton.Script 
+coroutine.wrap(RTDP_fake_script)()
+local function IVYI_fake_script() -- SettingsButton.Script 
 	local script = Instance.new('LocalScript', SettingsButton)
 
 	script.Parent.MouseButton1Click:connect(function()
@@ -461,8 +640,8 @@ local function ZAEWM_fake_script() -- SettingsButton.Script
 		end
 	end)
 end
-coroutine.wrap(ZAEWM_fake_script)()
-local function GZKYMI_fake_script() -- WebsiteButton.LocalScript 
+coroutine.wrap(IVYI_fake_script)()
+local function WRAPBEF_fake_script() -- WebsiteButton.LocalScript 
 	local script = Instance.new('LocalScript', WebsiteButton)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -494,8 +673,8 @@ local function GZKYMI_fake_script() -- WebsiteButton.LocalScript
 		setclipboard("https://shadowhub.xyz")
 	end)
 end
-coroutine.wrap(GZKYMI_fake_script)()
-local function SBKTKJ_fake_script() -- TracersButton.Example 
+coroutine.wrap(WRAPBEF_fake_script)()
+local function VYGAXL_fake_script() -- TracersButton.Example 
 	local script = Instance.new('LocalScript', TracersButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -506,8 +685,8 @@ local function SBKTKJ_fake_script() -- TracersButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(SBKTKJ_fake_script)()
-local function UARZJWC_fake_script() -- TracersButton.Script 
+coroutine.wrap(VYGAXL_fake_script)()
+local function CXKNSAO_fake_script() -- TracersButton.Script 
 	local script = Instance.new('LocalScript', TracersButton)
 
 	_G.SendNotifications = false   -- If set to true then the script would notify you frequently on any changes applied and when loaded / errored. (If a game can detect this, it is recommended to set it to false)
@@ -759,8 +938,8 @@ local function UARZJWC_fake_script() -- TracersButton.Script
 		end
 	end)
 end
-coroutine.wrap(UARZJWC_fake_script)()
-local function YZTENI_fake_script() -- ESPBoxesButton.Example 
+coroutine.wrap(CXKNSAO_fake_script)()
+local function JCSNCM_fake_script() -- ESPBoxesButton.Example 
 	local script = Instance.new('LocalScript', ESPBoxesButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -771,8 +950,8 @@ local function YZTENI_fake_script() -- ESPBoxesButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(YZTENI_fake_script)()
-local function VHLZMO_fake_script() -- ESPBoxesButton.Script 
+coroutine.wrap(JCSNCM_fake_script)()
+local function HEMTFKI_fake_script() -- ESPBoxesButton.Script 
 	local script = Instance.new('LocalScript', ESPBoxesButton)
 
 	_G.SendNotifications = false   -- If set to true then the script would notify you frequently on any changes applied and when loaded / errored. (If a game can detect this, it is recommended to set it to false)
@@ -1112,8 +1291,8 @@ local function VHLZMO_fake_script() -- ESPBoxesButton.Script
 		end
 	end)
 end
-coroutine.wrap(VHLZMO_fake_script)()
-local function KFRSC_fake_script() -- AimAssistButton.Example 
+coroutine.wrap(HEMTFKI_fake_script)()
+local function ZBGPHXR_fake_script() -- AimAssistButton.Example 
 	local script = Instance.new('LocalScript', AimAssistButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1124,8 +1303,8 @@ local function KFRSC_fake_script() -- AimAssistButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(KFRSC_fake_script)()
-local function CUDBDF_fake_script() -- AimAssistButton.Script 
+coroutine.wrap(ZBGPHXR_fake_script)()
+local function FZVC_fake_script() -- AimAssistButton.Script 
 	local script = Instance.new('LocalScript', AimAssistButton)
 
 	_G.AimbotEnabled = false
@@ -1243,8 +1422,8 @@ local function CUDBDF_fake_script() -- AimAssistButton.Script
 		end
 	end)
 end
-coroutine.wrap(CUDBDF_fake_script)()
-local function KAJCB_fake_script() -- InfJumpButton.Example 
+coroutine.wrap(FZVC_fake_script)()
+local function ICAG_fake_script() -- InfJumpButton.Example 
 	local script = Instance.new('LocalScript', InfJumpButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1255,8 +1434,8 @@ local function KAJCB_fake_script() -- InfJumpButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(KAJCB_fake_script)()
-local function SBNK_fake_script() -- InfJumpButton.Script 
+coroutine.wrap(ICAG_fake_script)()
+local function CXPV_fake_script() -- InfJumpButton.Script 
 	local script = Instance.new('LocalScript', InfJumpButton)
 
 	_G.infJump1 = false
@@ -1316,8 +1495,8 @@ local function SBNK_fake_script() -- InfJumpButton.Script
 		end
 	end)
 end
-coroutine.wrap(SBNK_fake_script)()
-local function IJPK_fake_script() -- FBButton.Example 
+coroutine.wrap(CXPV_fake_script)()
+local function ALFJT_fake_script() -- FBButton.Example 
 	local script = Instance.new('LocalScript', FBButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1328,8 +1507,8 @@ local function IJPK_fake_script() -- FBButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(IJPK_fake_script)()
-local function GZAVZLU_fake_script() -- FBButton.Script 
+coroutine.wrap(ALFJT_fake_script)()
+local function EKFULG_fake_script() -- FBButton.Script 
 	local script = Instance.new('LocalScript', FBButton)
 
 	_G.FullBrightEnabled = false
@@ -1451,8 +1630,8 @@ local function GZAVZLU_fake_script() -- FBButton.Script
 		end
 	end)
 end
-coroutine.wrap(GZAVZLU_fake_script)()
-local function XFSTK_fake_script() -- CloseRoblox.Example 
+coroutine.wrap(EKFULG_fake_script)()
+local function ZZKBBML_fake_script() -- CloseRoblox.Example 
 	local script = Instance.new('LocalScript', CloseRoblox)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1463,8 +1642,8 @@ local function XFSTK_fake_script() -- CloseRoblox.Example
 		end
 	end)--]]
 end
-coroutine.wrap(XFSTK_fake_script)()
-local function BOYFHK_fake_script() -- CloseRoblox.Script 
+coroutine.wrap(ZZKBBML_fake_script)()
+local function IFVEMW_fake_script() -- CloseRoblox.Script 
 	local script = Instance.new('LocalScript', CloseRoblox)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1480,8 +1659,8 @@ local function BOYFHK_fake_script() -- CloseRoblox.Script
 		script.Parent.Parent.Parent.Parent.WarningFrame.Transparency = 0
 	end)
 end
-coroutine.wrap(BOYFHK_fake_script)()
-local function QSTAJVF_fake_script() -- AntiKick.Example 
+coroutine.wrap(IFVEMW_fake_script)()
+local function EMZQ_fake_script() -- AntiKick.Example 
 	local script = Instance.new('LocalScript', AntiKick)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1492,8 +1671,8 @@ local function QSTAJVF_fake_script() -- AntiKick.Example
 		end
 	end)--]]
 end
-coroutine.wrap(QSTAJVF_fake_script)()
-local function KDEK_fake_script() -- AntiKick.Script 
+coroutine.wrap(EMZQ_fake_script)()
+local function AWZCRW_fake_script() -- AntiKick.Script 
 	local script = Instance.new('LocalScript', AntiKick)
 
 	_G.antiKick = false
@@ -1554,8 +1733,8 @@ local function KDEK_fake_script() -- AntiKick.Script
 			end
 		end)
 end
-coroutine.wrap(KDEK_fake_script)()
-local function UERMEL_fake_script() -- CCButton.Example 
+coroutine.wrap(AWZCRW_fake_script)()
+local function ZFJHA_fake_script() -- CCButton.Example 
 	local script = Instance.new('LocalScript', CCButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1566,8 +1745,8 @@ local function UERMEL_fake_script() -- CCButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(UERMEL_fake_script)()
-local function DGVDTYM_fake_script() -- CCButton.Script 
+coroutine.wrap(ZFJHA_fake_script)()
+local function HGBP_fake_script() -- CCButton.Script 
 	local script = Instance.new('LocalScript', CCButton)
 
 	_G.clientCrasherEnabled = false
@@ -1593,8 +1772,145 @@ local function DGVDTYM_fake_script() -- CCButton.Script
 		end
 	end)
 end
-coroutine.wrap(DGVDTYM_fake_script)()
-local function YSGT_fake_script() -- Frame.DragScript 
+coroutine.wrap(HGBP_fake_script)()
+local function ROGWNDW_fake_script() -- HBExanderButton.Example 
+	local script = Instance.new('LocalScript', HBExanderButton)
+
+	--[[script.Parent.MouseButton1Click:connect(function()
+		if script.Parent.Parent.Parent.CharacterFrame.Visible == false then
+			script.Parent.Parent.Parent.CharacterFrame.Visible = true
+		else
+			script.Parent.Parent.Parent.CharacterFrame.Visible = false
+		end
+	end)--]]
+end
+coroutine.wrap(ROGWNDW_fake_script)()
+local function LBGIO_fake_script() -- HBExanderButton.Script 
+	local script = Instance.new('LocalScript', HBExanderButton)
+
+	_G.HeadSize = 10
+	_G.Disabled = false
+	_G.hitBoxesTransparency = 1
+	
+	function clientCrasher()
+	game:GetService('RunService').RenderStepped:connect(function()
+			if _G.Disabled then
+				for i,v in next, game:GetService('Players'):GetPlayers() do
+					if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+						pcall(function()
+							v.Character.HumanoidRootPart.Size         = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+							v.Character.HumanoidRootPart.Transparency = _G.hitBoxesTransparency
+							v.Character.HumanoidRootPart.BrickColor   = BrickColor.new("Really red")
+							v.Character.HumanoidRootPart.Material     = "Neon"
+							v.Character.HumanoidRootPart.CanCollide   = false
+						end)
+					end
+				end
+			end
+		end)       
+	end
+	
+	script.Parent.MouseButton1Click:connect(function()
+		if _G.Disabled == false then
+			_G.Disabled = true
+			script.Parent.Parent.HBExanderButton.BackgroundColor3 = Color3.new(0.427451, 1, 0.388235)
+			clientCrasher()
+		elseif _G.Disabled == true then
+			_G.Disabled = false
+			script.Parent.Parent.HBExanderButton.BackgroundColor3 = Color3.new(0, 0, 0)
+		end
+	end)
+end
+coroutine.wrap(LBGIO_fake_script)()
+local function RXNA_fake_script() -- HBExanderSettingsButton.Example 
+	local script = Instance.new('LocalScript', HBExanderSettingsButton)
+
+	--[[script.Parent.MouseButton1Click:connect(function()
+		if script.Parent.Parent.Parent.CharacterFrame.Visible == false then
+			script.Parent.Parent.Parent.CharacterFrame.Visible = true
+		else
+			script.Parent.Parent.Parent.CharacterFrame.Visible = false
+		end
+	end)--]]
+end
+coroutine.wrap(RXNA_fake_script)()
+local function NEZQSV_fake_script() -- HBExanderSettingsButton.Script 
+	local script = Instance.new('LocalScript', HBExanderSettingsButton)
+
+	script.Parent.MouseButton1Click:connect(function()
+		if script.Parent.Parent.Parent.Parent.HitBoxSettings.Visible == false then
+			script.Parent.Parent.Parent.Parent.HitBoxSettings.Visible = true
+			script.Parent.Parent.HBExanderSettingsButton.BackgroundColor3 = Color3.new(0.427451, 1, 0.388235)
+		else
+			script.Parent.Parent.Parent.Parent.HitBoxSettings.Visible = false
+			script.Parent.Parent.HBExanderSettingsButton.BackgroundColor3 = Color3.new(0, 0, 0)
+		end
+	end)
+end
+coroutine.wrap(NEZQSV_fake_script)()
+local function LADRU_fake_script() -- AntiVoidButton.Example 
+	local script = Instance.new('LocalScript', AntiVoidButton)
+
+	--[[script.Parent.MouseButton1Click:connect(function()
+		if script.Parent.Parent.Parent.CharacterFrame.Visible == false then
+			script.Parent.Parent.Parent.CharacterFrame.Visible = true
+		else
+			script.Parent.Parent.Parent.CharacterFrame.Visible = false
+		end
+	end)--]]
+end
+coroutine.wrap(LADRU_fake_script)()
+local function HIJVW_fake_script() -- AntiVoidButton.Script 
+	local script = Instance.new('LocalScript', AntiVoidButton)
+
+	_G.AntiVoidEnabled = false
+	
+	function AntiVoid()
+		if _G.AntiVoidEnabled == true then
+			AntiVoidPart = Instance.new("Part")
+			AntiVoidPart.Parent = game.Workspace
+			AntiVoidPart.Size = Vector3.new(3048, 0.001, 3048)
+			AntiVoidPart.Position = Vector3.new(2.361, -88.692, -2.862)
+			AntiVoidPart.Anchored = true
+			AntiVoidPart.Touched:Connect(function(part)
+				local torso = part.Parent:FindFirstChild("Torso") or part
+				if not torso:FindFirstChild("ElevatorVelocity") then
+					local velocity = Instance.new("BodyVelocity", torso)
+					velocity.Name = "ElevatorVelocity"
+					local uv=AntiVoidPart.CFrame.UpVector
+					local maxf=Vector3.new(0,math.huge,0)
+					print(uv)
+					if uv.X ~= 0 then maxf = Vector3.new(math.huge, maxf.Y, maxf.Z) end
+					if uv.Z ~= 0 then maxf = Vector3.new(maxf.X, maxf.Y, math.huge) end
+	
+					velocity.MaxForce = maxf
+					velocity.Velocity = AntiVoidPart.CFrame.UpVector*60
+					end
+			end)
+			AntiVoidPart.TouchEnded:Connect(function(part)
+				wait(2)
+				local torso = part.Parent:FindFirstChild("Torso") or part
+				if torso:FindFirstChild("ElevatorVelocity") then 
+					torso.ElevatorVelocity:Destroy()
+				end
+			end)
+	end
+	end
+	
+	script.Parent.MouseButton1Click:connect(function()
+		if _G.AntiVoidEnabled == false then
+			_G.AntiVoidEnabled = true
+			script.Parent.Parent.AntiVoidButton.BackgroundColor3 = Color3.new(0.427451, 1, 0.388235)
+			AntiVoid()
+		elseif _G.AntiVoidEnabled == true then
+			_G.AntiVoidEnabled = false
+			script.Parent.Parent.AntiVoidButton.BackgroundColor3 = Color3.new(0, 0, 0)
+			AntiVoidPart:Destroy()
+		end
+	end)
+end
+coroutine.wrap(HIJVW_fake_script)()
+local function KDSY_fake_script() -- Frame.DragScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
@@ -1637,8 +1953,8 @@ local function YSGT_fake_script() -- Frame.DragScript
 	end)
 	
 end
-coroutine.wrap(YSGT_fake_script)()
-local function WGJMIM_fake_script() -- SettingsFrame.DragScript 
+coroutine.wrap(KDSY_fake_script)()
+local function QGDYO_fake_script() -- SettingsFrame.DragScript 
 	local script = Instance.new('LocalScript', SettingsFrame)
 
 	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
@@ -1681,8 +1997,8 @@ local function WGJMIM_fake_script() -- SettingsFrame.DragScript
 	end)
 	
 end
-coroutine.wrap(WGJMIM_fake_script)()
-local function AEAAB_fake_script() -- BlurButton.Example 
+coroutine.wrap(QGDYO_fake_script)()
+local function COBPB_fake_script() -- BlurButton.Example 
 	local script = Instance.new('LocalScript', BlurButton)
 
 	--[[script.Parent.MouseButton1Click:connect(function()
@@ -1693,8 +2009,8 @@ local function AEAAB_fake_script() -- BlurButton.Example
 		end
 	end)--]]
 end
-coroutine.wrap(AEAAB_fake_script)()
-local function QJIRKUH_fake_script() -- BlurButton.Script 
+coroutine.wrap(COBPB_fake_script)()
+local function ZFKAVGK_fake_script() -- BlurButton.Script 
 	local script = Instance.new('LocalScript', BlurButton)
 
 	_G.BackgroundBlur = true
@@ -1720,8 +2036,8 @@ local function QJIRKUH_fake_script() -- BlurButton.Script
 		end
 	end)
 end
-coroutine.wrap(QJIRKUH_fake_script)()
-local function RLENI_fake_script() -- WebsiteButton_2.LocalScript 
+coroutine.wrap(ZFKAVGK_fake_script)()
+local function OGTHC_fake_script() -- WebsiteButton_2.LocalScript 
 	local script = Instance.new('LocalScript', WebsiteButton_2)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1753,8 +2069,8 @@ local function RLENI_fake_script() -- WebsiteButton_2.LocalScript
 		setclipboard("https://shadowhub.xyz")
 	end)
 end
-coroutine.wrap(RLENI_fake_script)()
-local function KGFIEOV_fake_script() -- SHCL.LoadedNotif 
+coroutine.wrap(OGTHC_fake_script)()
+local function NAMPM_fake_script() -- SHCL.LoadedNotif 
 	local script = Instance.new('LocalScript', SHCL)
 
 	wait(1)
@@ -1783,8 +2099,8 @@ local function KGFIEOV_fake_script() -- SHCL.LoadedNotif
 	wait(0.01)
 	script.Parent.NotifFrame.Visible = false
 end
-coroutine.wrap(KGFIEOV_fake_script)()
-local function GAWS_fake_script() -- Yes.LocalScript 
+coroutine.wrap(NAMPM_fake_script)()
+local function MQVU_fake_script() -- Yes.LocalScript 
 	local script = Instance.new('LocalScript', Yes)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1803,8 +2119,8 @@ local function GAWS_fake_script() -- Yes.LocalScript
 		game:shutdown()
 	end)
 end
-coroutine.wrap(GAWS_fake_script)()
-local function VXWHA_fake_script() -- No.LocalScript 
+coroutine.wrap(MQVU_fake_script)()
+local function DBJDL_fake_script() -- No.LocalScript 
 	local script = Instance.new('LocalScript', No)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1821,8 +2137,8 @@ local function VXWHA_fake_script() -- No.LocalScript
 		script.Parent.Parent.Parent.WarningFrame.Visible = false
 	end)
 end
-coroutine.wrap(VXWHA_fake_script)()
-local function YKJCFN_fake_script() -- WarningFrame.DragScript 
+coroutine.wrap(DBJDL_fake_script)()
+local function SWYCGZT_fake_script() -- WarningFrame.DragScript 
 	local script = Instance.new('LocalScript', WarningFrame)
 
 	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
@@ -1865,4 +2181,84 @@ local function YKJCFN_fake_script() -- WarningFrame.DragScript
 	end)
 	
 end
-coroutine.wrap(YKJCFN_fake_script)()
+coroutine.wrap(SWYCGZT_fake_script)()
+local function UHJQTUW_fake_script() -- Down.LocalScript 
+	local script = Instance.new('LocalScript', Down)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		_G.HeadSize = _G.HeadSize -0.1
+		script.Parent.Parent.CurrentSize.Text = _G.HeadSize
+	end)
+end
+coroutine.wrap(UHJQTUW_fake_script)()
+local function BKLI_fake_script() -- Up.LocalScript 
+	local script = Instance.new('LocalScript', Up)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		_G.HeadSize = _G.HeadSize +0.1
+		script.Parent.Parent.CurrentSize.Text = _G.HeadSize
+	end)
+end
+coroutine.wrap(BKLI_fake_script)()
+local function KZCYLZW_fake_script() -- Up1.LocalScript 
+	local script = Instance.new('LocalScript', Up1)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		_G.hitBoxesTransparency = _G.hitBoxesTransparency +0.1
+		script.Parent.Parent.CurrentTransparency.Text = _G.HeadSize
+	end)
+end
+coroutine.wrap(KZCYLZW_fake_script)()
+local function LFYG_fake_script() -- Down1.LocalScript 
+	local script = Instance.new('LocalScript', Down1)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		_G.hitBoxesTransparency = _G.hitBoxesTransparency -0.1
+		script.Parent.Parent.CurrentTransparency.Text = _G.hitBoxesTransparency
+	end)
+end
+coroutine.wrap(LFYG_fake_script)()
+local function HFXDNDL_fake_script() -- HitBoxSettings.DragScript 
+	local script = Instance.new('LocalScript', HitBoxSettings)
+
+	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
+	--Put this inside of your Frame and configure the speed if you would like.
+	--Enjoy! Credits go to: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
+	
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(HFXDNDL_fake_script)()
